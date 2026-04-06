@@ -1,0 +1,73 @@
+# =====================================================
+# CorreSeguro - Configuración de seguridad Apache
+# =====================================================
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# =====================================================
+# CABECERAS DE SEGURIDAD HTTP
+# =====================================================
+<IfModule mod_headers.c>
+    # Evitar que la web se cargue en iframes de otros dominios (clickjacking)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Evitar que el navegador infiera el tipo MIME incorrecto
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Protección XSS básica en navegadores legacy
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Controlar qué información de referencia se envía
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Limitar funcionalidades del navegador innecesarias
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # Eliminar cabecera que revela la versión del servidor
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+</IfModule>
+
+# =====================================================
+# BLOQUEAR ACCESO A ARCHIVOS SENSIBLES
+# =====================================================
+
+# Bloquear acceso al archivo .env (credenciales)
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Bloquear acceso a archivos de configuración
+<FilesMatch "(^\.env|\.env\.|config\.php|csrf\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Bloquear acceso a archivos de control de versiones y composer
+<FilesMatch "(\.git|\.gitignore|composer\.(json|lock)|package\.json|package-lock\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# =====================================================
+# TIPOS MIME Y COMPRESIÓN
+# =====================================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# =====================================================
+# CACHÉ DE ASSETS ESTÁTICOS
+# =====================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css                  "access plus 1 month"
+    ExpiresByType application/javascript    "access plus 1 month"
+    ExpiresByType image/png                 "access plus 6 months"
+    ExpiresByType image/jpeg                "access plus 6 months"
+    ExpiresByType image/svg+xml             "access plus 6 months"
+    ExpiresByType image/webp                "access plus 6 months"
+    ExpiresByType application/json          "access plus 1 day"
+</IfModule>

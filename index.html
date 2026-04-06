@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Consent Mode v2 — debe ir ANTES de GTM -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Por defecto todo denegado hasta que el usuario decida
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage:        'denied',
+        wait_for_update:   500
+      });
+    </script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRK2DCFK');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <title>CorreSeguro - Seguro para Runners</title>
+    <meta name="description" content="Seguro deportivo especializado para runners por 59,90€/año. Coberturas de accidentes, asistencia sanitaria 24h, invalidez y reembolso de inscripciones. Belsué Seguros + SURNE.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ── Cookie Consent ── -->
+    <script>
+      window.CookieConsentConfig = {
+        companyName:      'Belsué',
+        privacyPolicyUrl: 'politica-privacidad.html',
+        cookiePolicyUrl:  'politica-cookies.html',
+        primaryColor:     '#8A0C3C',
+        primaryDark:      '#6B092F',
+        accentColor:      '#FFD700',
+        position:         'bottom',
+        consentVersion:   '1.0',
+        storageKey:       'belsue_correseguro_consent',
+
+        onAcceptAll: function() {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage:        'granted'
+          });
+        },
+        onRejectAll: function() {
+          gtag('consent', 'update', {
+            analytics_storage: 'denied',
+            ad_storage:        'denied'
+          });
+        },
+        onSave: function(consent) {
+          gtag('consent', 'update', {
+            analytics_storage: consent.analytics ? 'granted' : 'denied',
+            ad_storage:        consent.marketing  ? 'granted' : 'denied'
+          });
+        },
+      };
+    </script>
+    <script src="js/cookie-consent.js" defer></script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRK2DCFK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- HEADER / HERO SECTION -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <img src="images/logo1.png" alt="CorreSeguro" style="height: 70px; width: auto; margin-left: -20px;">
+                    <!-- Badge influencer: visible solo cuando ?influencer=nombre está activo -->
+                    <div id="influencer-badge"></div>
+                    <span>CorreSeguro</span>
+                    <span style="font-size: 0.7em; opacity: 0.8;"><a href="https://www.belsue.es/" class="enlaceWeb" target="_blank" rel="noopener noreferrer">by Belsué</a></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#coberturas">Coberturas</a></li>
+                    <li><a href="#formulario">Contratar</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="contorg.html">Contacto Organizadores</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>El seguro pensado por Runners,<span class="highlight">para Runners</span></h1>
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Accidentes</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-hospital"></i>
+                    <span>Asistencia Sanitaria 24H</span>
+                </div>
+            </div>
+             <p>¿Eres organizador de pruebas deportivas? <a href="contorg.html" class="btn-ayuda">¡Podemos ayudarte!</a></p>
+            <a href="#formulario" class="btn-primary">
+                <i class="fas fa-file-signature"></i> Contratar Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- COBERTURAS -->
+    <section id="coberturas" class="coberturas">
+        <div class="container">
+            <h2 class="section-title">¿Qué incluye tu seguro?</h2>
+            <div class="coberturas-grid">
+                <div class="cobertura-card">
+                    <div class="icon-box"><i class="fas fa-ambulance"></i></div>
+                    <h3>Urgencias</h3>
+                    <p>Hasta 9.000€ para accidentes durante la práctica de running: trail, canicross, carreras de obstáculos y cualquier actividad cuyo objetivo principal sea correr.</p>
+                </div>
+                <div class="cobertura-card">
+                    <div class="icon-box"><i class="fas fa-clock"></i></div>
+                    <h3>Cobertura Completa 24H</h3>
+                    <p>Asistencia sanitaria por accidente las 24 horas del día. Tanto en entrenamientos individuales como en carreras populares, estés donde estés.</p>
+                </div>
+                <div class="cobertura-card">
+                    <div class="icon-box"><i class="fas fa-file-medical"></i></div>
+                    <h3>Gastos Sanitarios</h3>
+                    <p>Consultas médicas, pruebas diagnósticas, hospitalización, traslado urgente desde el lugar del accidente y material de osteosíntesis hasta 1.200€.</p>
+                </div>
+                <div class="cobertura-card">
+                    <div class="icon-box"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Rehabilitación</h3>
+                    <p>Fisioterapia y tratamientos de recuperación por prescripción médica. También incluye cobertura de torceduras y esguinces, las lesiones más frecuentes del runner.</p>
+                </div>
+                <div class="cobertura-card">
+                    <div class="icon-box"><i class="fas fa-wheelchair"></i></div>
+                    <h3>Capital por Invalidez o Fallecimiento</h3>
+                    <p>Hasta 60.000€ en caso de fallecimiento o invalidez absoluta por accidente. </p>
+                </div>
+                <div class="cobertura-card">
+                    <div class="icon-box"><i class="fas fa-ticket-alt"></i></div>
+                    <h3>Reembolso Inscripción</h3>
+                    <p>Serán reembolsables los gastos de inscripción a las carreras, gastos de desplazamiento o reservas hoteleras abonadas y no reembolsables*.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO MULTI-PASO (6 PASOS - ORDEN NUEVO) -->
+    <section id="formulario" class="formulario">
+        <div class="container">
+            <h2 class="section-title">📋 Contrata tu Seguro Runner</h2>
+            <p class="section-subtitle">Completa los pasos para obtener tu póliza</p>
+            
+            <!-- BARRA DE PROGRESO -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Datos Personales</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Contacto</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Dirección</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Beneficiarios</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-label">Coberturas</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="6">
+                        <div class="step-number">6</div>
+                        <div class="step-label">Pago</div>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="seguroForm" class="form-container">
+                
+                <!-- PASO 1: DATOS PERSONALES -->
+                <div class="form-step" data-step="1">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Datos Personales del Asegurado</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tipoDocumento">Tipo Documento *</label>
+                                <select id="tipoDocumento" name="tipo_documento" required>
+                                    <option value="NIF">NIF</option>
+                                    <option value="NIE">NIE</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="nif">Número Documento *</label>
+                                <input type="text" id="nif" name="nif" required placeholder="12345678X">
+                            </div>
+                            <div class="form-group">
+                                <label for="sexo">Sexo *</label>
+                                <select id="sexo" name="sexo" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="Hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" id="nombre" name="nombre" required placeholder="María">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido1">Primer Apellido *</label>
+                                <input type="text" id="apellido1" name="apellido1" required placeholder="López">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido2">Segundo Apellido *</label>
+                                <input type="text" id="apellido2" name="apellido2" required placeholder="García">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fechaNacimiento">Fecha Nacimiento *</label>
+                                <input type="date" id="fechaNacimiento" name="fecha_nacimiento" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profesion">Profesión *</label>
+                                <input type="text" id="profesion" name="profesion" required placeholder="Ej: Ingeniero">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-next" onclick="nextStep(1)">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 2: DATOS DE CONTACTO -->
+                <div class="form-step" data-step="2" style="display: none;">
+                    <div class="form-section">
+                        <h3><i class="fas fa-envelope"></i> Datos de Contacto</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="maria@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" required placeholder="600123456">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep(2)">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep(2)">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 3: DIRECCIÓN -->
+                <div class="form-step" data-step="3" style="display: none;">
+                    <div class="form-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tipoVia">Tipo de Vía *</label>
+                                <select id="tipoVia" name="tipo_via" required>
+                                    <option value="CALLE">Calle</option>
+                                    <option value="AVENIDA">Avenida</option>
+                                    <option value="PLAZA">Plaza</option>
+                                    <option value="PASEO">Paseo</option>
+                                    <option value="CARRETERA">Carretera</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="calle">Nombre Vía *</label>
+                                <input type="text" id="calle" name="calle" required placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="numero">Número *</label>
+                                <input type="text" id="numero" name="numero" required placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="piso">Portal/Piso/Puerta</label>
+                                <input type="text" id="piso" name="piso" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="cp">Código Postal *</label>
+                                <input type="text" id="cp" name="cp" required placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="municipio">Municipio *</label>
+                                <input type="text" id="municipio" name="municipio" required placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="provincia">Provincia *</label>
+                                <select id="provincia" name="provincia" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="Álava">Álava</option>
+                                    <option value="Albacete">Albacete</option>
+                                    <option value="Alicante">Alicante</option>
+                                    <option value="Almería">Almería</option>
+                                    <option value="Ávila">Ávila</option>
+                                    <option value="Badajoz">Badajoz</option>
+                                    <option value="Barcelona">Barcelona</option>
+                                    <option value="Burgos">Burgos</option>
+                                    <option value="Cáceres">Cáceres</option>
+                                    <option value="Cádiz">Cádiz</option>
+                                    <option value="Cantabria">Cantabria</option>
+                                    <option value="Castellón">Castellón</option>
+                                    <option value="Ciudad Real">Ciudad Real</option>
+                                    <option value="Córdoba">Córdoba</option>
+                                    <option value="Cuenca">Cuenca</option>
+                                    <option value="Girona">Girona</option>
+                                    <option value="Granada">Granada</option>
+                                    <option value="Guadalajara">Guadalajara</option>
+                                    <option value="Guipúzcoa">Guipúzcoa</option>
+                                    <option value="Huelva">Huelva</option>
+                                    <option value="Huesca">Huesca</option>
+                                    <option value="Islas Baleares">Islas Baleares</option>
+                                    <option value="Jaén">Jaén</option>
+                                    <option value="La Coruña">La Coruña</option>
+                                    <option value="La Rioja">La Rioja</option>
+                                    <option value="Las Palmas">Las Palmas</option>
+                                    <option value="León">León</option>
+                                    <option value="Lleida">Lleida</option>
+                                    <option value="Lugo">Lugo</option>
+                                    <option value="Madrid">Madrid</option>
+                                    <option value="Málaga">Málaga</option>
+                                    <option value="Murcia">Murcia</option>
+                                    <option value="Navarra">Navarra</option>
+                                    <option value="Ourense">Ourense</option>
+                                    <option value="Palencia">Palencia</option>
+                                    <option value="Pontevedra">Pontevedra</option>
+                                    <option value="Salamanca">Salamanca</option>
+                                    <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                                    <option value="Segovia">Segovia</option>
+                                    <option value="Sevilla">Sevilla</option>
+                                    <option value="Soria">Soria</option>
+                                    <option value="Tarragona">Tarragona</option>
+                                    <option value="Teruel">Teruel</option>
+                                    <option value="Toledo">Toledo</option>
+                                    <option value="Valencia">Valencia</option>
+                                    <option value="Valladolid">Valladolid</option>
+                                    <option value="Vizcaya">Vizcaya</option>
+                                    <option value="Zamora">Zamora</option>
+                                    <option value="Zaragoza">Zaragoza</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep(3)">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep(3)">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 4: BENEFICIARIOS (ANTES ERA 5) -->
+                <div class="form-step" data-step="4" style="display: none;">
+                    <div class="form-section">
+                        <h3><i class="fas fa-users"></i> Beneficiarios</h3>
+                        
+                        <div class="beneficiarios-opciones">
+                            <div class="radio-group">
+                                <input type="radio" id="benef_defecto" name="beneficiarios" value="DEFECTO" checked>
+                                <label for="benef_defecto">
+                                    <strong>Beneficiarios por defecto</strong>
+                                    <p class="texto-ayuda">Orden legal establecido: 1) Cónyuge/Pareja 2) Descendientes 3) Padres 4) Hermanos 5) Herederos legales</p>
+                                </label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="benef_personalizado" name="beneficiarios" value="PERSONALIZADO">
+                                <label for="benef_personalizado">
+                                    <strong>Definir beneficiarios personalizados</strong>
+                                    <p class="texto-ayuda">Podrás especificarlos después de contratar</p>
+                                </label>
+                            </div>
+                        </div>
+     <!-- CUADRO DE TEXTO (oculto por defecto) -->
+        <div id="beneficiarios-personalizados-box" class="beneficiarios-personalizados-box" style="display: none;">
+            <label for="beneficiarios_texto">
+                <strong><i class="fas fa-edit"></i> Especifica los beneficiarios:</strong>
+            </label>
+            <textarea 
+                id="beneficiarios_texto" 
+                name="beneficiarios_texto" 
+                rows="4" 
+                placeholder="Ejemplo:
+                1. Juan Pérez García (50%)
+                2. María López Martínez (50%)
+
+                O indica el porcentaje que desees para cada beneficiario..."></textarea>
+            <p class="texto-ayuda-box">
+                <i class="fas fa-info-circle"></i> Indica el nombre completo y el porcentaje de cada beneficiario
+            </p>
+        </div>
+                        <div class="nota-legal">
+                            <strong>NOTA:</strong> Los beneficiarios indicados aplicarán únicamente para las garantías de fallecimiento.
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep(4)">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep(4)">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 5: COBERTURAS + PRECIO DESTACADO (ANTES ERA 4) -->
+                <div class="form-step" data-step="5" style="display: none;">
+                    <div class="form-section">
+                        <h3><i class="fas fa-shield-alt"></i> Coberturas Incluidas</h3>
+                        
+                        <div class="coberturas-selector">
+                            <div class="cobertura-item">
+                                <input type="checkbox" id="cob_fallecimiento" name="coberturas[]" value="FALLECIMIENTO" checked disabled>
+                                <label for="cob_fallecimiento">
+                                    <strong>Fallecimiento por Accidente</strong>
+                                    <span class="cobertura-cap">60.000€</span>
+                                </label>
+                            </div>
+                            <div class="cobertura-item">
+                                <input type="checkbox" id="cob_invalidez" name="coberturas[]" value="INVALIDEZ" checked disabled>
+                                <label for="cob_invalidez">
+                                    <strong>Invalidez Absoluta Accidente</strong>
+                                    <span class="cobertura-cap">60.000€</span>
+                                </label>
+                            </div>
+                            <div class="cobertura-item">
+                                <input type="checkbox" id="cob_asistencia" name="coberturas[]" value="ASISTENCIA" checked disabled>
+                                <label for="cob_asistencia">
+                                    <strong>Asistencia Sanitaria por Accidente</strong>
+                                    <span class="cobertura-cap">9.000€</span>
+                                </label>
+                            </div>
+                            <div class="cobertura-item">
+                                <input type="checkbox" id="cob_fisioterapia" name="coberturas[]" value="FISIOTERAPIA" checked disabled>
+                                <label for="cob_fisioterapia">
+                                    <strong>Invalidez Permanente Parcial por Accidente</strong>
+                                    <span class="cobertura-cap">60.000€</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- PRECIO DESTACADO -->
+                        <div class="resumen-precio">
+                            <div class="precio-total">
+                                <span>Total Anual:</span>
+                                <span class="precio-destacado">59,90€</span>
+                            </div>
+                            <div class="nota-legal">
+                            <strong>*</strong> Las coberturas tendrán en todo caso la cuantía máxima señalada en las condiciones particulares o especiales de la póliza.
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep(5)">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep(5)">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 6: FORMA DE PAGO -->
+                <div class="form-step" data-step="6" style="display: none;">
+                    <div class="form-section">
+                        <h3><i class="fas fa-credit-card"></i> Forma de Pago</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="frecuencia_pago">Frecuencia de Pago *</label>
+                                <select id="frecuencia_pago" name="frecuencia_pago" required onchange="calcularPrecioFinal()">
+                                    <option value="ANUAL">Anual (59,90€)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo_renovacion">Tipo de Renovación *</label>
+                                <select id="tipo_renovacion" name="tipo_renovacion" required>
+                                    <option value="AUTOMATICA">Automática</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="datos-bancarios">
+                            <h4>Datos Bancarios del Tomador</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="iban_pais">País</label>
+                                    <input type="text" id="iban_pais" name="iban_pais" value="ES" readonly style="background: #f5f5f5;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iban_dc">DC IBAN *</label>
+                                    <input type="text" id="iban_dc" name="iban_dc" placeholder="XX" maxlength="2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iban_entidad">Entidad *</label>
+                                    <input type="text" id="iban_entidad" name="iban_entidad" placeholder="0000" maxlength="4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iban_sucursal">Sucursal *</label>
+                                    <input type="text" id="iban_sucursal" name="iban_sucursal" placeholder="0000" maxlength="4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iban_dc_cuenta">DC *</label>
+                                    <input type="text" id="iban_dc_cuenta" name="iban_dc_cuenta" placeholder="00" maxlength="2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="iban_cuenta">Nº Cuenta *</label>
+                                    <input type="text" id="iban_cuenta" name="iban_cuenta" placeholder="0000000000" maxlength="10">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="legal-final">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacidad" name="privacidad" required>
+                                <label for="privacidad">He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> *</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <label for="terminos">Acepto los <a href="terminos-condiciones.html" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a> del seguro *</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="autorizacion_datos" name="autorizacion_datos" required>
+                                <label for="autorizacion_datos">Autorizo la cesión de datos personales a SURNE para la emisión de la póliza *</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep(6)">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-check"></i> Contratar Seguro
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2 class="section-title">📞 ¿Tienes Dudas?</h2>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <div><h4>Teléfono</h4><p>900 123 456</p></div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <div><h4>Email</h4><p>info@correseguro.es</p></div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-comments"></i>
+                    <div><h4>Chat IA</h4><p>Disponible 24/7</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <!-- Enlaces legales -->
+        <div class="footer-legal">
+            <a href="aviso-legal.html">Aviso Legal</a>
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="politica-transparencia.html">Transparencia</a>
+        </div>
+        
+        <!-- Copyright y notas -->
+        <div class="footer-info">
+            <p>&copy; 2026 CorreSeguro. Todos los derechos reservados.</p>
+            <p class="footer-note">Seguro emitido a través de Surne Compañía de Seguros</p>
+            <p class="footer-note">Una iniciativa de Belsué Seguros</p>
+        </div>
+        
+        <!-- Datos de contacto rápidos -->
+        <div class="footer-contacto">
+            <span><i class="fas fa-map-marker-alt"></i> Gran Vía 33, Zaragoza</span>
+            <span><i class="fas fa-phone"></i> 976 221 423</span>
+            <span><i class="fas fa-envelope"></i> info@correseguro.es</span>
+        </div>
+    </div>
+</footer>
+
+    <!-- MODAL DE CONFIRMACIÓN -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>¡Datos Guardados!</h2>
+            <p>El archivo CSV se ha descargado correctamente.</p>
+            <p class="modal-note">Tu póliza será procesada en menos de 24 horas.</p>
+            <button class="btn-primary" onclick="cerrarModal()">Entendido</button>
+        </div>
+    </div>
+
+    <!-- CHATBOT -->
+    <div id="chatbot-container">
+        <button id="chatbot-btn" onclick="toggleChat()">
+            <i class="fas fa-comments"></i><span class="chatbot-badge">!</span>
+        </button>
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-info">
+                    <i class="fas fa-robot"></i>
+                    <div><h4>Asistente CorreSeguro</h4><span class="chatbot-status">● En línea</span></div>
+                </div>
+                <button onclick="toggleChat()" class="chatbot-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="message bot-message">
+                    <div class="message-content">¡Hola! Soy el asistente virtual de CorreSeguro. ¿En qué puedo ayudarte hoy?</div>
+                    <div class="message-time">Ahora</div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="chatbot-faq">
+                <p class="faq-title">Preguntas frecuentes:</p>
+                <div class="faq-buttons">
+                    <button onclick="sendQuickQuestion('¿Qué cubre el seguro?')">¿Qué cubre?</button>
+                    <button onclick="sendQuickQuestion('¿Cuál es el precio?')">¿Precio?</button>
+                    <button onclick="sendQuickQuestion('¿Cubre competiciones?')">¿Competiciones?</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/influencer.js"></script>
+    <script src="js/codigos-postales.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Eventos Runners - CorreSeguro</title>
+    <meta name="description" content="Calendario completo de carreras, maratones y eventos running en toda España. Encuentra tu próxima competición.">
+    
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css' rel='stylesheet' />
+    
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Estilos específicos de eventos -->
+    <link rel="stylesheet" href="css/eventos.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="images/logo1.png" alt="CorreSeguro" style="height: 70px; width: auto; margin-left: -20px;">
+                <span>CorreSeguro</span>
+                <span style="font-size: 0.7em; opacity: 0.8;">by Belsué</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#coberturas">Coberturas</a></li>
+                <li><a href="eventos.html" class="active">Eventos</a></li>
+                <li><a href="index.html#formulario">Contratar</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span>/</span>
+                <span>Eventos</span>
+            </div>
+            <h1>Calendario de Eventos y Carreras</h1>
+            <p>Encuentra las mejores carreras, maratones y competiciones de toda España. ¡Actualizado mensualmente!</p>
+        </div>
+    </header>
+
+    <!-- BUSCADOR DE EVENTOS -->
+    <div class="container">
+        <div class="eventos-buscador">
+            <form class="buscador-grid" onsubmit="buscarEventos(event)">
+                <div class="buscador-group">
+                    <label for="comunidad">Comunidad Autónoma</label>
+                    <select id="comunidad" name="comunidad">
+                        <option value="">Todas</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="catalunya">Cataluña</option>
+                        <option value="valencia">Valencia</option>
+                        <option value="andalucia">Andalucía</option>
+                        <option value="pais-vasco">País Vasco</option>
+                        <option value="galicia">Galicia</option>
+                        <option value="castilla">Castilla y León</option>
+                        <option value="aragon">Aragón</option>
+                        <option value="murcia">Murcia</option>
+                        <option value="canarias">Canarias</option>
+                    </select>
+                </div>
+                <div class="buscador-group">
+                    <label for="distancia">Distancia</label>
+                    <select id="distancia" name="distancia">
+                        <option value="">Todas</option>
+                        <option value="5k">5K</option>
+                        <option value="10k">10K</option>
+                        <option value="21k">Media Maratón (21K)</option>
+                        <option value="42k">Maratón (42K)</option>
+                        <option value="trail">Trail Running</option>
+                    </select>
+                </div>
+                <div class="buscador-group">
+                    <label for="mes">Mes</label>
+                    <select id="mes" name="mes">
+                        <option value="">Todos</option>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-buscar">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CALENDARIO VISUAL -->
+    <div class="calendario-container">
+        <h2 class="section-title">Eventos y Carreras</h2>
+        <div id="calendar"></div>
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="container">
+        <div class="eventos-stats">
+            <div class="stat-card">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="numero">150+</div>
+                <div class="texto">Eventos al año</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="numero">17</div>
+                <div class="texto">Comunidades</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div class="numero">50K+</div>
+                <div class="texto">Corredores</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <div class="numero">25</div>
+                <div class="texto">Maratones</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTROS RÁPIDOS -->
+    <section class="container">
+        <div class="eventos-filtros">
+            <button class="filtro-btn active" onclick="filtrarEventos('todos')">Todos</button>
+            <button class="filtro-btn" onclick="filtrarEventos('madrid')">Madrid</button>
+            <button class="filtro-btn" onclick="filtrarEventos('catalunya')">Cataluña</button>
+            <button class="filtro-btn" onclick="filtrarEventos('valencia')">Valencia</button>
+            <button class="filtro-btn" onclick="filtrarEventos('andalucia')">Andalucía</button>
+            <button class="filtro-btn" onclick="filtrarEventos('pais-vasco')">País Vasco</button>
+            <button class="filtro-btn" onclick="filtrarEventos('42k')">Maratones</button>
+            <button class="filtro-btn" onclick="filtrarEventos('21k')">Media Maratón</button>
+        </div>
+    </section>
+
+    <!-- MENSAJE INICIAL (cuando no hay búsqueda) -->
+    <div id="mensaje-inicial" class="mensaje-inicial">
+        <i class="fas fa-search"></i>
+        <h3>Busca tu próxima carrera</h3>
+        <p>Usa el buscador de arriba para encontrar eventos por comunidad, distancia o mes</p>
+    </div>
+
+    <!-- GRID DE EVENTOS (oculto por defecto) -->
+    <section class="container" style="padding-bottom: 80px;">
+        <div id="eventos-resultados" class="eventos-grid" style="display: none;"></div>
+        
+        <!-- Botón cargar más -->
+        <div id="eventos-cta" class="eventos-cta" style="display: none;">
+            <button class="btn-primary" onclick="cargarMasEventos()">
+                <i class="fas fa-plus"></i> Cargar más eventos
+            </button>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="eventos-newsletter">
+        <div class="container newsletter-content">
+            <h2>Recibe el calendario en tu email</h2>
+            <p>Suscríbete y recibe mensualmente los mejores eventos running de España.</p>
+            <form class="newsletter-form" onsubmit="suscribirNewsletter(event)">
+                <input type="email" placeholder="Tu email" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CorreSeguro. Todos los derechos reservados.</p>
+            <p class="footer-note">Seguro emitido a través de Surne Compañía de Seguros</p>
+            <p class="footer-note">Una iniciativa de Belsue Seguros</p>
+        </div>
+    </footer>
+
+    <!-- CHATBOT -->
+    <div id="chatbot-container">
+        <button id="chatbot-btn" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">!</span>
+        </button>
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>Asistente CorreSeguro</h4>
+                        <span class="chatbot-status">● En línea</span>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        ¡Hola! 👋 Soy el asistente virtual de CorreSeguro. ¿En qué puedo ayudarte hoy?
+                    </div>
+                    <div class="message-time">Ahora</div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="chatbot-faq">
+                <p class="faq-title">Preguntas frecuentes:</p>
+                <div class="faq-buttons">
+                    <button onclick="sendQuickQuestion('¿Qué cubre el seguro?')">¿Qué cubre?</button>
+                    <button onclick="sendQuickQuestion('¿Cuál es el precio?')">¿Precio?</button>
+                    <button onclick="sendQuickQuestion('¿Cubre competiciones?')">¿Competiciones?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    
+    <script src="js/formulario.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/eventos.js"></script>
+</body>
+</html>

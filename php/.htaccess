@@ -1,0 +1,11 @@
+# =====================================================
+# CorreSeguro/php/ - Bloquear acceso directo a ficheros
+# internos que no deben ser accesibles desde el navegador.
+# csrf.php y los endpoints de formulario SÍ son accesibles (AJAX).
+# =====================================================
+
+# Solo config.php es un include interno - nunca debe servirse directamente
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>

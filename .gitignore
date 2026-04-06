@@ -1,0 +1,14 @@
+# Credenciales y configuración sensible - NUNCA subir a git
+.env
+.env.*
+!.env.example
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo

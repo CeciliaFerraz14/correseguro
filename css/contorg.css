@@ -1,0 +1,451 @@
+/* ========================================
+   PÁGINA DE CONTACTO - ORGANIZADORES
+   ======================================== */
+
+/* ========================================
+   NAVBAR - COLOR CORPORATIVO
+   ======================================== */
+.navbar {
+    background: linear-gradient(135deg, #8A0C3C 0%, #6B092F 100%) !important;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: var(--white) !important;
+}
+
+.navbar .logo i {
+    color: var(--accent-gold) !important;
+}
+
+.navbar .logo span {
+    color: var(--white) !important;
+}
+
+.navbar .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar .nav-menu a {
+    color: var(--white) !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar .nav-menu a:hover,
+.navbar .nav-menu a.active {
+    color: var(--accent-gold) !important;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.contacto-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.contacto-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.contacto-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: var(--white);
+}
+
+/* ========================================
+   CONTACTO DIRECTO - CARDS
+   ======================================== */
+.contacto-directo {
+    padding: 60px 0;
+    background: var(--light-gray);
+}
+
+.contacto-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.contacto-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(138, 12, 60, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover mejorado */
+.contacto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(138, 12, 60, 0.2);
+    border-color: var(--accent-gold);
+}
+
+/* Barra decorativa superior */
+.contacto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.contacto-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icono circular mejorado */
+.contacto-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #FFA500 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contacto-card:hover .contacto-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+.contacto-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+/* Título */
+.contacto-info h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Datos de contacto */
+.contacto-dato {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.contacto-dato a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.contacto-dato a:hover {
+    color: var(--accent-orange);
+    transform: scale(1.05);
+}
+
+/* Email específico - más grande */
+.contacto-card:nth-child(2) .contacto-dato a {
+    font-size: 1.3rem;
+    word-break: break-all;
+}
+
+/* Horario */
+.contacto-horario {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Badge de "Disponible" */
+.contacto-card::after {
+    content: '✓ Disponible';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: var(--success-color);
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.contacto-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   FORMULARIO DE CONTACTO
+   ======================================== */
+.formulario-contacto {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.formulario-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.formulario-info h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.beneficios-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.beneficios-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.beneficios-lista i {
+    color: var(--accent-gold);
+    font-size: 1.3rem;
+    margin-top: 3px;
+}
+
+/* Formulario Box */
+.formulario-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-color);
+}
+
+.formulario-box h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.formulario-subtitulo {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.contacto-form .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.contacto-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.contacto-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.contacto-form input,
+.contacto-form select,
+.contacto-form textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s;
+}
+
+.contacto-form input:focus,
+.contacto-form select:focus,
+.contacto-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.contacto-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contacto-form .legal {
+    margin-top: 20px;
+}
+
+.contacto-form .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contacto-form .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    accent-color: var(--primary-color);
+}
+
+.contacto-form .checkbox-group label {
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.contacto-form .checkbox-group a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.btn-submit-org {
+    width: 100%;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--accent-orange), var(--primary-color));
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-submit-org:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+}
+
+/* ========================================
+   MAPA
+   ======================================== */
+.mapa-section {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.mapa-container {
+    margin-top: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 968px) {
+    .formulario-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contacto-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .navbar .nav-menu {
+        display: none;
+    }
+    
+    .contacto-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contacto-card {
+        padding: 30px 20px;
+    }
+    
+    .contacto-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .contacto-icon i {
+        font-size: 1.7rem;
+    }
+    
+    .contacto-dato {
+        font-size: 1.3rem;
+    }
+    
+    .contacto-card:nth-child(2) .contacto-dato a {
+        font-size: 1.1rem;
+    }
+    
+    .formulario-box {
+        padding: 30px 20px;
+    }
+    
+    .contacto-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+    .contacto-dato {
+        font-size: 1.2rem;
+    }
+    
+    .contacto-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .contacto-header h1 {
+        font-size: 1.8rem;
+    }
+}

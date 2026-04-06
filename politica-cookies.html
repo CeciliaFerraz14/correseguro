@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - CorreSeguro by Belsué</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.7;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            text-align: center;
+            color: #8A0C3C;
+            border-bottom: 3px solid #8A0C3C;
+            padding-bottom: 15px;
+        }
+        .subtitulo {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 17px;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            color: #8A0C3C;
+            font-weight: bold;
+            border-left: 4px solid #8A0C3C;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 28px;
+        }
+        li { margin: 7px 0; }
+        a { color: #8A0C3C; text-decoration: underline; }
+
+        .seccion {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #eee;
+        }
+        .seccion:last-child { border-bottom: none; }
+
+        /* Destacado */
+        .aviso {
+            background: #fff8f0;
+            border-left: 4px solid #FF6B35;
+            padding: 14px 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 16px 0;
+        }
+        .aviso p { margin: 0; font-size: 14px; }
+
+        /* Tablas de cookies */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+        thead th {
+            background: #8A0C3C;
+            color: #fff;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        tbody td {
+            border: 1px solid #e0e0e0;
+            padding: 9px 12px;
+            vertical-align: top;
+        }
+        tbody tr:nth-child(even) td { background: #fafafa; }
+        tbody tr:hover td { background: #fff3f7; }
+
+        /* Badge de categoría */
+        .badge {
+            display: inline-block;
+            padding: 2px 9px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+        .badge-necesaria    { background: #e8f5e9; color: #2e7d32; }
+        .badge-analitica    { background: #e3f2fd; color: #1565c0; }
+        .badge-marketing    { background: #fce4ec; color: #880e4f; }
+        .badge-preferencias { background: #f3e5f5; color: #6a1b9a; }
+
+        /* Botón gestionar cookies */
+        .btn-cookies {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 22px;
+            background: #8A0C3C;
+            color: #fff !important;
+            text-decoration: none !important;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: background .2s;
+        }
+        .btn-cookies:hover { background: #6B092F; }
+
+        /* Instrucciones de navegadores */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .nav-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .nav-item strong { display: block; margin-bottom: 4px; color: #333; }
+        .nav-item a { font-size: 13px; }
+
+        .fecha {
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            table { display: block; overflow-x: auto; }
+            .nav-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+
+    <!-- Cookie Consent (para que el botón "Gestionar" funcione en esta página) -->
+    <script>
+      window.CookieConsentConfig = {
+        companyName:      'Belsué',
+        privacyPolicyUrl: 'politica-privacidad.html',
+        cookiePolicyUrl:  'politica-cookies.html',
+        primaryColor:     '#8A0C3C',
+        primaryDark:      '#6B092F',
+        accentColor:      '#FFD700',
+        storageKey:       'belsue_correseguro_consent',
+        consentVersion:   '1.0',
+      };
+    </script>
+    <script src="js/cookie-consent.js" defer></script>
+</head>
+<body>
+
+    <h1>🍪 Política de Cookies</h1>
+    <p class="subtitulo">CorreSeguro · Belsué Mediación de Seguros S.L · Última actualización: marzo 2025</p>
+
+    <!-- 1. QUÉ SON -->
+    <div class="seccion">
+        <h2>1. ¿Qué son las cookies?</h2>
+        <p>
+            Las cookies son pequeños archivos de texto que los sitios web depositan en tu dispositivo
+            (ordenador, tablet o móvil) cuando los visitas. Sirven para que el sitio funcione correctamente,
+            para recordar tus preferencias o para recopilar información estadística sobre cómo se usa.
+        </p>
+        <p>
+            Junto a las cookies existen otras tecnologías similares —píxeles de seguimiento, almacenamiento
+            local (<em>localStorage/sessionStorage</em>), etc.— que esta política también cubre y a las que
+            en adelante nos referiremos colectivamente como «cookies».
+        </p>
+    </div>
+
+    <!-- 2. RESPONSABLE -->
+    <div class="seccion">
+        <h2>2. ¿Quién es el responsable?</h2>
+        <p>
+            <strong>Belsué Mediación de Seguros S.L</strong><br>
+            Gran Vía, 33 Local Izda. · 50006 Zaragoza<br>
+            Tel.: <a href="tel:+34976221423">976 221 423</a><br>
+            Email privacidad: <a href="mailto:lopdgdd@belsue.es">lopdgdd@belsue.es</a>
+        </p>
+    </div>
+
+    <!-- 3. TIPOS DE COOKIES -->
+    <div class="seccion">
+        <h2>3. Tipos de cookies que utilizamos</h2>
+        <p>Clasificamos las cookies según su finalidad en cuatro categorías:</p>
+
+        <h3>🛡️ Cookies necesarias (siempre activas)</h3>
+        <p>
+            Son imprescindibles para que el sitio funcione. Sin ellas no podrías navegar ni usar funcionalidades
+            básicas. No requieren tu consentimiento (base legal: interés legítimo / cumplimiento de contrato).
+        </p>
+
+        <h3>📊 Cookies analíticas</h3>
+        <p>
+            Nos permiten contar visitas y fuentes de tráfico para medir y mejorar el rendimiento del sitio.
+            Toda la información que recopilan es agregada y anónima.
+        </p>
+
+        <h3>📣 Cookies de marketing</h3>
+        <p>
+            Son establecidas por nuestros socios publicitarios para construir un perfil de tus intereses
+            y mostrarte anuncios relevantes en otros sitios.
+        </p>
+
+        <h3>⚙️ Cookies de preferencias</h3>
+        <p>
+            Permiten que el sitio recuerde información que cambia su comportamiento o apariencia
+            (idioma seleccionado, región, etc.).
+        </p>
+    </div>
+
+    <!-- 4. LISTADO DETALLADO -->
+    <div class="seccion">
+        <h2>4. Listado de cookies</h2>
+
+        <div class="aviso">
+            <p>
+                ⚠️ Esta tabla se actualiza periódicamente. Si incorporamos nuevas cookies que requieran
+                consentimiento, lo notificaremos en el banner de cookies para que puedas revisar tu elección.
+            </p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Proveedor</th>
+                    <th>Finalidad</th>
+                    <th>Categoría</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Necesarias -->
+                <tr>
+                    <td><code>belsue_correseguro_consent</code></td>
+                    <td>Belsué (propio)</td>
+                    <td>Almacena las preferencias de cookies del usuario para no volver a mostrar el aviso.</td>
+                    <td><span class="badge badge-necesaria">Necesaria</span></td>
+                    <td>1 año</td>
+                </tr>
+                <tr>
+                    <td><code>PHPSESSID</code></td>
+                    <td>Servidor (propio)</td>
+                    <td>Identifica la sesión del usuario en el servidor PHP. Necesaria para el envío de formularios.</td>
+                    <td><span class="badge badge-necesaria">Necesaria</span></td>
+                    <td>Sesión</td>
+                </tr>
+
+                <!-- Analíticas -->
+                <tr>
+                    <td><code>_ga</code></td>
+                    <td>Google Analytics</td>
+                    <td>Distingue usuarios únicos. Permite medir el número de visitas y el comportamiento de navegación.</td>
+                    <td><span class="badge badge-analitica">Analítica</span></td>
+                    <td>2 años</td>
+                </tr>
+                <tr>
+                    <td><code>_ga_XXXXXXXXXX</code></td>
+                    <td>Google Analytics</td>
+                    <td>Mantiene el estado de la sesión para Google Analytics 4.</td>
+                    <td><span class="badge badge-analitica">Analítica</span></td>
+                    <td>2 años</td>
+                </tr>
+                <tr>
+                    <td><code>_gid</code></td>
+                    <td>Google Analytics</td>
+                    <td>Distingue usuarios. Se renueva cada 24 horas.</td>
+                    <td><span class="badge badge-analitica">Analítica</span></td>
+                    <td>24 horas</td>
+                </tr>
+
+                <!-- Marketing -->
+                <tr>
+                    <td><code>_fbp</code></td>
+                    <td>Meta (Facebook)</td>
+                    <td>Utilizada por Meta para mostrar anuncios en Facebook e Instagram a usuarios que han visitado este sitio.</td>
+                    <td><span class="badge badge-marketing">Marketing</span></td>
+                    <td>3 meses</td>
+                </tr>
+                <tr>
+                    <td><code>_fbc</code></td>
+                    <td>Meta (Facebook)</td>
+                    <td>Almacena el identificador de clic de un anuncio de Facebook para atribución de conversiones.</td>
+                    <td><span class="badge badge-marketing">Marketing</span></td>
+                    <td>2 años</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-size:13px;color:#777;">
+            Los identificadores como <code>_ga_XXXXXXXXXX</code> variarán según el ID de propiedad
+            de Google Analytics configurado. Los proveedores de terceros pueden actualizar sus propias cookies
+            de forma independiente; consulta sus políticas de privacidad para información actualizada.
+        </p>
+    </div>
+
+    <!-- 5. TRANSFERENCIAS INTERNACIONALES -->
+    <div class="seccion">
+        <h2>5. Transferencias internacionales de datos</h2>
+        <p>
+            Algunos proveedores de cookies (Google, Meta) tienen su sede fuera del Espacio Económico Europeo (EEE).
+            Dichas transferencias se amparan en las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea
+            o en el acuerdo UE–EE.UU. Data Privacy Framework, según corresponda. Puedes obtener más información
+            en las políticas de privacidad de cada proveedor:
+        </p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a></li>
+            <li><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Política de privacidad de Meta</a></li>
+        </ul>
+    </div>
+
+    <!-- 6. GESTIONAR CONSENTIMIENTO -->
+    <div class="seccion">
+        <h2>6. ¿Cómo gestionar tu consentimiento?</h2>
+
+        <h3>Desde nuestro panel de preferencias</h3>
+        <p>
+            Puedes revisar y cambiar tu elección en cualquier momento pulsando el botón de abajo.
+            Tu selección se almacena en tu dispositivo durante 1 año o hasta que la borres manualmente.
+        </p>
+        <button class="btn-cookies" onclick="CookieConsent.openPreferences()">
+            ⚙️ Gestionar mis preferencias de cookies
+        </button>
+
+        <h3 style="margin-top:28px;">Desde la configuración de tu navegador</h3>
+        <p>
+            También puedes bloquear o eliminar todas las cookies directamente en tu navegador.
+            Ten en cuenta que desactivar cookies necesarias puede afectar al funcionamiento del sitio.
+        </p>
+
+        <div class="nav-grid">
+            <div class="nav-item">
+                <strong>🌐 Google Chrome</strong>
+                <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">
+                    Instrucciones
+                </a>
+            </div>
+            <div class="nav-item">
+                <strong>🦊 Mozilla Firefox</strong>
+                <a href="https://support.mozilla.org/es/kb/cookies-informacion-que-los-sitios-web-guardan-en-" target="_blank" rel="noopener noreferrer">
+                    Instrucciones
+                </a>
+            </div>
+            <div class="nav-item">
+                <strong>🧭 Safari</strong>
+                <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">
+                    Instrucciones
+                </a>
+            </div>
+            <div class="nav-item">
+                <strong>🔷 Microsoft Edge</strong>
+                <a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">
+                    Instrucciones
+                </a>
+            </div>
+            <div class="nav-item">
+                <strong>🔴 Opera</strong>
+                <a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank" rel="noopener noreferrer">
+                    Instrucciones (en)
+                </a>
+            </div>
+        </div>
+
+        <h3>Opt-out específico por proveedor</h3>
+        <ul>
+            <li>
+                <strong>Google Analytics:</strong> instala el
+                <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">complemento de inhabilitación de Google Analytics</a>.
+            </li>
+            <li>
+                <strong>Meta / Facebook:</strong> gestiona tus preferencias en
+                <a href="https://www.facebook.com/ads/preferences" target="_blank" rel="noopener noreferrer">Configuración de anuncios de Facebook</a>.
+            </li>
+            <li>
+                <strong>Publicidad online en general:</strong> puedes optar por salir a través de
+                <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer">Your Online Choices (IAB Europe)</a>.
+            </li>
+        </ul>
+    </div>
+
+    <!-- 7. DERECHOS -->
+    <div class="seccion">
+        <h2>7. Tus derechos</h2>
+        <p>
+            En relación con el tratamiento de datos mediante cookies, puedes ejercer los derechos de
+            <strong>acceso, rectificación, supresión, limitación, portabilidad y oposición</strong>
+            dirigiéndote a:
+        </p>
+        <ul>
+            <li>📧 <a href="mailto:lopdgdd@belsue.es">lopdgdd@belsue.es</a></li>
+            <li>📬 Belsué Mediación de Seguros S.L · Gran Vía, 33 Local Izda. · 50006 Zaragoza</li>
+        </ul>
+        <p>
+            Si consideras que el tratamiento no se ajusta a la normativa vigente, puedes presentar
+            una reclamación ante la
+            <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>.
+        </p>
+    </div>
+
+    <!-- 8. ACTUALIZACIONES -->
+    <div class="seccion">
+        <h2>8. Actualizaciones de esta política</h2>
+        <p>
+            Podemos actualizar esta política cuando lo requieran cambios en la normativa, en las
+            tecnologías que utilizamos o en los servicios de terceros integrados. Cuando los cambios
+            sean relevantes o afecten a cookies que requieren consentimiento, te lo notificaremos
+            a través del banner de cookies para que puedas revisar y confirmar tu elección.
+        </p>
+        <p>
+            Puedes consultar la versión anterior escribiéndonos a
+            <a href="mailto:lopdgdd@belsue.es">lopdgdd@belsue.es</a>.
+        </p>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <div style="margin-top:40px;padding-top:20px;border-top:1px solid #eee;display:flex;gap:20px;flex-wrap:wrap;font-size:14px;">
+        <a href="index.html">← Volver al inicio</a>
+        <a href="politica-privacidad.html">Política de privacidad</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="terminos-condiciones.html">Términos y condiciones</a>
+    </div>
+
+    <p class="fecha">Versión 1.0 · Marzo 2025 · Belsué Mediación de Seguros S.L</p>
+
+</body>
+</html>

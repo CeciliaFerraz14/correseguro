@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Organizadores - CorreSeguro</title>
+    <meta name="description" content="Contacta con nosotros si eres organizador de pruebas deportivas. Te ofrecemos seguros especiales para tus eventos.">
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contorg.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="images/logo1.png" alt="CorreSeguro" style="height: 70px; width: auto; margin-left: -20px;">
+                <span>CorreSeguro</span>
+                <span style="font-size: 0.7em; opacity: 0.8;"><a href="https://www.belsue.es/" class="enlaceWeb" target="_blank" rel="noopener noreferrer">by Belsué</a></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#coberturas">Coberturas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="index.html#formulario">Contratar</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header contacto-header">
+        <div class="container">
+            <h1>Contacto para Organizadores</h1>
+            <p>¿Organizas carreras o eventos deportivos? Estamos aquí para ayudarte.</p>
+        </div>
+    </header>
+
+    <!-- CONTACTO DIRECTO -->
+    <section class="contacto-directo">
+        <div class="container">
+            <div class="contacto-cards">
+                <!-- TELÉFONO -->
+                <div class="contacto-card">
+                    <div class="contacto-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contacto-info">
+                        <h3>Llámanos</h3>
+                        <p class="contacto-dato">
+                            <a href="tel:+34900123456">900 123 456</a>
+                        </p>
+                        <p class="contacto-horario">Lun - Vie: 9:00 - 18:30</p>
+                    </div>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="contacto-card">
+                    <div class="contacto-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contacto-info">
+                        <h3>Escríbenos</h3>
+                        <p class="contacto-dato">
+                            <a href="mailto:organizadores@correseguro.es">organizadores@correseguro.es</a>
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <!-- WHATSAPP -->
+                <div class="contacto-card">
+                    <div class="contacto-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contacto-info">
+                        <h3>WhatsApp</h3>
+                        <p class="contacto-dato">
+                            <a href="https://wa.me/34600123456" target="_blank">600 123 456</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="formulario-contacto">
+        <div class="container">
+            <div class="formulario-wrapper">
+                <div class="formulario-info">
+                    <h2>¿Por qué contactar con nosotros?</h2>
+                    <ul class="beneficios-lista">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Seguros especiales para eventos deportivos</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cobertura para todos los participantes</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Presupuestos personalizados sin compromiso</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Asesoramiento experto en seguros deportivos</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Gestión rápida y sencilla</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte durante todo el evento</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="formulario-box">
+                    <h3>Solicita información</h3>
+                    <p class="formulario-subtitulo">Rellena el formulario y te contactaremos en menos de 24 horas</p>
+                    
+                    <form id="contactoForm" class="contacto-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre_org">Nombre completo *</label>
+                                <input type="text" id="nombre_org" name="nombre" required placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email_org">Email *</label>
+                                <input type="email" id="email_org" name="email" required placeholder="tu@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefono_org">Teléfono *</label>
+                                <input type="tel" id="telefono_org" name="telefono" required placeholder="600123456">
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa">Organización/Club</label>
+                                <input type="text" id="empresa" name="empresa" placeholder="Nombre de la organización">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="tipo_evento">Tipo de evento *</label>
+                                <select id="tipo_evento" name="tipo_evento" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="Maratón">Maratón</option>
+                                    <option value="Media Maratón">Media Maratón</option>
+                                    <option value="Carrera Popular">Carrera Popular</option>
+                                    <option value="Trail Running">Trail Running</option>
+                                    <option value="Triatlón">Triatlón</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fecha_evento">Fecha prevista del evento</label>
+                                <input type="date" id="fecha_evento" name="fecha_evento">
+                            </div>
+                            <div class="form-group">
+                                <label for="participantes">Número estimado de participantes</label>
+                                <select id="participantes" name="participantes">
+                                    <option value="">Seleccionar</option>
+                                    <option value="0-100">0-100</option>
+                                    <option value="100-500">100-500</option>
+                                    <option value="500-1000">500-1000</option>
+                                    <option value="1000-5000">1000-5000</option>
+                                    <option value="5000+">5000+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos más detalles sobre tu evento..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row legal">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacidad_org" name="privacidad" required>
+                                <label for="privacidad_org">He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> *</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit-org">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA (OPCIONAL) -->
+    <section class="mapa-section">
+        <div class="container">
+            <h2 class="section-title">📍 Oficina principal 📍 </h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.5678901234567!2d-0.8924237!3d41.6450863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914dc7a15a3cf%3A0xacaa8120db4a8786!2sBelsu%C3%A9%20Mediaci%C3%B3n%20de%20Seguros!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 15px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CorreSeguro. Todos los derechos reservados.</p>
+            <p class="footer-note">Seguro emitido a través de Surne Compañía de Seguros</p>
+            <p class="footer-note">Una iniciativa de Belsué Mediación de Seguros</p>
+        </div>
+    </footer>
+
+    <script src="js/contorg.js"></script>
+</body>
+</html>
