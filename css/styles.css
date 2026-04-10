@@ -7,14 +7,14 @@
     --primary-dark: #007A52;
     --primary-light: #7BFFC4;
 
-    /* Acento marino y cyan (confianza, frescura) */
-    --accent-gold: #2050B0;
-    --accent-orange: #0090C0;
-    --accent-teal: #00B8D4;
+    /* Acentos verdes complementarios */
+    --accent-gold: #00954A;
+    --accent-orange: #00D478;
+    --accent-teal: #5EF0A0;
 
     /* Neutros */
-    --secondary-color: #0D2060;
-    --text-dark: #0D2060;
+    --secondary-color: #064E30;
+    --text-dark: #1A2E20;
     --text-light: #4A7A72;
     --white: #FFFFFF;
     --light-gray: #F0FDFB;
@@ -49,7 +49,7 @@ body {
    HERO SECTION
    ======================================== */
 .hero {
-    background: linear-gradient(135deg, #00C878 0%, #0D2060 100%);
+    background: linear-gradient(135deg, #00C878 0%, #064E30 100%);
     min-height: 70vh;
     position: relative;
     overflow: hidden;
@@ -117,8 +117,8 @@ body {
     padding: 80px 20px;
     color: var(--white);
 
-    background: linear-gradient(rgba(241, 167, 196, 0.7), rgba(26, 26, 46, 0.7)),
-                url('../images/1.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 78, 48, 0.55), rgba(0, 78, 48, 0.70)),
+                url('../images/carrera4.JPG') center/cover no-repeat;
     border-radius: 20px;
     margin: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -133,7 +133,7 @@ body {
 }
 
 .hero-content .highlight {
-    color: var(--accent-gold);
+    color: #FFC838;
     display: block;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
@@ -161,7 +161,7 @@ body {
 
 .feature i {
     font-size: 2.5rem;
-    color: var(--accent-gold);
+    color: #FFC838;
 }
 
 .feature span {
@@ -632,10 +632,93 @@ section {
 }
 
 /* ========================================
+   CARRUSEL
+   ======================================== */
+.carrusel-section {
+    padding: 50px 0;
+    background: var(--light-gray);
+}
+
+.carrusel {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.6s ease;
+}
+
+.carrusel-track img {
+    min-width: calc(33.333% - 11px);
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.carrusel-btn:hover {
+    background: var(--primary-dark);
+}
+
+.carrusel-prev { left: 0; }
+.carrusel-next { right: 0; }
+
+.carrusel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.carrusel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carrusel-dots .dot.active {
+    background: #FFC838;
+}
+
+@media (max-width: 768px) {
+    .carrusel { padding: 0 36px; }
+    .carrusel-track img {
+        min-width: calc(100% - 0px);
+        height: 200px;
+    }
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .footer {
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, #00C878 0%, #00C878 65%, #064E30 100%);
     color: var(--white);
     text-align: center;
     padding: 40px 0;
@@ -1450,8 +1533,8 @@ section {
 }
 
 .nota-iban {
-    background: #E0F7FA;
-    border-left: 4px solid #00B8D4;
+    background: #E8FFF4;
+    border-left: 4px solid #00C878;
     padding: 12px 15px;
     margin-top: 15px;
     border-radius: 5px;
@@ -1489,7 +1572,7 @@ section {
    /* Botón Ayuda */
 .btn-ayuda {
     display: inline-block;
-    background: linear-gradient(135deg, #00B8D4 0%, #2050B0 100%);
+    background: linear-gradient(135deg, #00D478 0%, #00954A 100%);
     color: #FFFFFF;
     padding: 12px 30px;
     border-radius: 25px;
@@ -1497,14 +1580,14 @@ section {
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 184, 212, 0.35);
+    box-shadow: 0 4px 15px rgba(0, 149, 74, 0.35);
     margin-left: 10px;
 }
 
 .btn-ayuda:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(0, 184, 212, 0.5);
-    background: linear-gradient(135deg, #0090C0 0%, #0D2060 100%);
+    box-shadow: 0 6px 25px rgba(0, 149, 74, 0.5);
+    background: linear-gradient(135deg, #00C878 0%, #064E30 100%);
     color: #FFFFFF;
     text-decoration: none;
 }

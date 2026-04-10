@@ -96,7 +96,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h1>El seguro pensado por Runners,<span class="highlight">para Runners</span></h1>
             <div class="hero-features">
                 <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-ambulance"></i>
                     <span>Accidentes</span>
                 </div>
                 <div class="feature">
@@ -611,6 +611,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <!-- CARRUSEL DE FOTOS -->
+    <section class="carrusel-section">
+        <div class="carrusel">
+            <div class="carrusel-track">
+                <img src="images/carrera2.JPG" alt="Carrera runners">
+                <img src="images/carrera3.JPG" alt="Carrera runners">
+                <img src="images/carrera4.JPG" alt="Carrera runners">
+                <img src="images/carrera5.JPG" alt="Carrera runners">
+                <img src="images/carrera6.JPG" alt="Carrera runners">
+                <img src="images/carrera7.JPG" alt="Carrera runners">
+                <img src="images/carrera8.JPG" alt="Carrera runners">
+            </div>
+            <button class="carrusel-btn carrusel-prev" aria-label="Anterior">&#8249;</button>
+            <button class="carrusel-btn carrusel-next" aria-label="Siguiente">&#8250;</button>
+            <div class="carrusel-dots"></div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
 <footer class="footer">
     <div class="container">
@@ -688,6 +706,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/formulario.js"></script>
     <script src="js/chatbot.js"></script>
     <script src="js/components.js"></script>
+    <script>
+        (function () {
+            const track = document.querySelector('.carrusel-track');
+            const imgs = Array.from(track.querySelectorAll('img'));
+            const dotsContainer = document.querySelector('.carrusel-dots');
+            const visible = () => window.innerWidth <= 768 ? 1 : 3;
+            let current = 0, timer;
+
+            // Duplicar imágenes al final para bucle continuo
+            imgs.forEach(img => track.appendChild(img.cloneNode()));
+
+            const allImgs = track.querySelectorAll('img');
+            const total = imgs.length;
+
+            // Crear dots según imágenes originales
+            for (let i = 0; i < total; i++) {
+                const d = document.createElement('span');
+                d.className = 'dot' + (i === 0 ? ' active' : '');
+                d.addEventListener('click', () => { goTo(i); resetTimer(); });
+                dotsContainer.appendChild(d);
+            }
+
+            function itemWidth() {
+                const v = visible();
+                const gap = 16;
+                return (track.parentElement.clientWidth - 100 - gap * (v - 1)) / v + gap;
+            }
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = `translateX(-${current * itemWidth()}px)`;
+                dotsContainer.querySelectorAll('.dot').forEach((d, i) =>
+                    d.classList.toggle('active', i === current));
+            }
+
+            document.querySelector('.carrusel-next').addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+            document.querySelector('.carrusel-prev').addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+
+            function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 4000); }
+            timer = setInterval(() => goTo(current + 1), 4000);
+
+            window.addEventListener('resize', () => goTo(current));
+        })();
+    </script>
 
 </body>
 </html>
