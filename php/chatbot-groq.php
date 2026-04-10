@@ -243,13 +243,15 @@ El asegurado puede reclamar ante:
 
 === INSTRUCCIONES DE COMPORTAMIENTO ===
 - Responde SIEMPRE en español
-- Sé amable, conciso y profesional
+- Sé amable, directo y profesional. Ve al grano sin rodeos
+- Respuestas CORTAS: máximo 2-3 frases para preguntas simples. Para preguntas técnicas (baremo, exclusiones, documentación): usa listas breves con solo los datos clave
+- No repitas información que el usuario no ha pedido. Responde SOLO a lo que se pregunta
 - Si el usuario pregunta algo que no está en esta información, recomienda contactar por email (soporteit@belsue.es) o teléfono (976 221 423)
 - No inventes coberturas, precios ni condiciones que no estén aquí
-- Usa emojis ocasionalmente para hacer la conversación más amigable
-- Para preguntas simples: máximo 3-4 frases. Para preguntas técnicas (baremo, exclusiones, documentación): responde con el detalle necesario
+- Usa emojis con moderación (1-2 por respuesta como máximo)
 - Si el usuario quiere contratar, indícale que rellene el formulario en la web
-- Si alguien pregunta si una lesión concreta está cubierta, aplica rigurosamente la definición de accidente y las exclusiones";
+- Si alguien pregunta si una lesión concreta está cubierta, aplica rigurosamente la definición de accidente y las exclusiones
+- NUNCA hagas introducciones largas ni resúmenes al final. Respuesta directa y nada más";
 
 // ========================================
 // LLAMAR A GROQ API
@@ -260,7 +262,7 @@ $payload = [
         ['role' => 'system', 'content' => $systemPrompt],
         ['role' => 'user',   'content' => $userMessage],
     ],
-    'max_tokens'  => 500,
+    'max_tokens'  => 250,
     'temperature' => 0.7,
 ];
 

@@ -1,29 +1,29 @@
 /* ========================================
-   VARIABLES Y RESET - PALETA EQUILIBRADA
+   VARIABLES Y RESET - PALETA VERDE-MARINO
    ======================================== */
 :root {
-    /* Color corporativo Belsue */
-    --primary-color: #8A0C3C;
-    --primary-dark: #6B092F;
-    --primary-light: #A81048;
-    
-    /* Colores de acento */
-    --accent-gold: #FFD700;
-    --accent-orange: #FF6B35;
-    --accent-teal: #17BEBB;
-    
+    /* Primario: teal-verde vibrante (salud, naturaleza, running) */
+    --primary-color: #00C878;
+    --primary-dark: #007A52;
+    --primary-light: #7BFFC4;
+
+    /* Acento marino y cyan (confianza, frescura) */
+    --accent-gold: #2050B0;
+    --accent-orange: #0090C0;
+    --accent-teal: #00B8D4;
+
     /* Neutros */
-    --secondary-color: #1A1A2E;
-    --text-dark: #1A1A2E;
-    --text-light: #6B7280;
+    --secondary-color: #0D2060;
+    --text-dark: #0D2060;
+    --text-light: #4A7A72;
     --white: #FFFFFF;
-    --light-gray: #F8F9FA;
-    --border-color: #E5E7EB;
-    
+    --light-gray: #F0FDFB;
+    --border-color: #C8EAE4;
+
     /* Efectos */
-    --success-color: #28A745;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(138, 12, 60, 0.3);
+    --success-color: #00A865;
+    --shadow: 0 4px 6px rgba(0, 122, 82, 0.15);
+    --shadow-lg: 0 10px 25px rgba(0, 122, 82, 0.25);
 }
 
 * {
@@ -49,7 +49,7 @@ body {
    HERO SECTION
    ======================================== */
 .hero {
-    background: linear-gradient(135deg, #8A0C3C 0%, #5A0828 100%);
+    background: linear-gradient(135deg, #00C878 0%, #0D2060 100%);
     min-height: 70vh;
     position: relative;
     overflow: hidden;
@@ -186,7 +186,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #E55A2B;
+    background: #007A52;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
 }
@@ -202,11 +202,21 @@ body {
     color: var(--primary-color);
 }
 
+.formulario .section-title {
+    color: var(--primary-light);
+}
+
 .section-subtitle {
     text-align: center;
     color: var(--text-light);
     font-size: 1.1rem;
     margin-bottom: 50px;
+}
+
+.formulario .section-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
 }
 
 section {
@@ -223,8 +233,22 @@ section {
 
 .coberturas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.coberturas-grid .cobertura-card {
+    grid-column: span 2;
+}
+
+.coberturas-grid .cobertura-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.coberturas-grid .cobertura-card:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 .cobertura-card {
@@ -266,6 +290,130 @@ section {
 
 .cobertura-card p {
     color: var(--text-light);
+}
+
+.coberturas-nota {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    border-top: 1px solid #E5E7EB;
+    padding-top: 20px;
+    font-style: italic;
+}
+
+.cobertura-card--principal {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-top: none;
+    margin-bottom: 30px;
+    padding: 50px 40px 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cobertura-card--principal h3 {
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.cobertura-card--principal p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+}
+
+.cobertura-card--principal .icon-box {
+    background: rgba(255, 255, 255, 0.2);
+    width: 100px;
+    height: 100px;
+}
+
+.cobertura-card--principal .icon-box i {
+    font-size: 2.5rem;
+}
+
+.cobertura-card--principal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(138, 12, 60, 0.45);
+}
+
+.cobertura-incluye-label {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   RIESGO CUBIERTO - LÍNEA DIVISORA
+   ======================================== */
+.riesgo-cubierto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0 25px 0;
+}
+
+.riesgo-linea {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #007A52, transparent);
+}
+
+.riesgo-titulo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007A52;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.riesgo-descripcion {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* ========================================
+   BADGE DE PRECIO
+   ======================================== */
+.precio-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 40px 0;
+    animation: bounce-in 0.6s ease-out;
+}
+
+.precio-badge img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 16px rgba(45, 154, 106, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.precio-badge img:hover {
+    transform: scale(1.08);
+}
+
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ========================================
@@ -598,6 +746,18 @@ section {
 
     .coberturas-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .coberturas-grid .cobertura-card,
+    .coberturas-grid .cobertura-card:nth-child(4),
+    .coberturas-grid .cobertura-card:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    .cobertura-card {
+        padding: 30px 20px;
     }
 
     .contacto-info {
@@ -1267,8 +1427,8 @@ section {
 }
 
 .nota-legal {
-    background: #fff3cd;
-    border-left: 4px solid #ffc107;
+    background: #E8FFF7;
+    border-left: 4px solid #00C878;
     padding: 15px 20px;
     margin-top: 20px;
     border-radius: 5px;
@@ -1290,8 +1450,8 @@ section {
 }
 
 .nota-iban {
-    background: #e3f2fd;
-    border-left: 4px solid #2196F3;
+    background: #E0F7FA;
+    border-left: 4px solid #00B8D4;
     padding: 12px 15px;
     margin-top: 15px;
     border-radius: 5px;
@@ -1326,10 +1486,10 @@ section {
         gap: 10px;
     }
 }
-   /* Botón Ayuda - Dorado */
+   /* Botón Ayuda */
 .btn-ayuda {
     display: inline-block;
-    background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+    background: linear-gradient(135deg, #00B8D4 0%, #2050B0 100%);
     color: #FFFFFF;
     padding: 12px 30px;
     border-radius: 25px;
@@ -1337,14 +1497,14 @@ section {
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 184, 212, 0.35);
     margin-left: 10px;
 }
 
 .btn-ayuda:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
-    background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+    box-shadow: 0 6px 25px rgba(0, 184, 212, 0.5);
+    background: linear-gradient(135deg, #0090C0 0%, #0D2060 100%);
     color: #FFFFFF;
     text-decoration: none;
 }

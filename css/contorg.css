@@ -6,7 +6,7 @@
    NAVBAR - COLOR CORPORATIVO
    ======================================== */
 .navbar {
-    background: linear-gradient(135deg, #8A0C3C 0%, #6B092F 100%) !important;
+    background: linear-gradient(135deg, #00C878 0%, #0D2060 100%) !important;
     padding: 20px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -99,7 +99,7 @@
 /* Efecto hover mejorado */
 .contacto-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(138, 12, 60, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 122, 82, 0.2);
     border-color: var(--accent-gold);
 }
 
@@ -124,7 +124,7 @@
 .contacto-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, #FFA500 100%);
+    background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary-color) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;

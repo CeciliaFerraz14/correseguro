@@ -36,9 +36,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         companyName:      'Belsué',
         privacyPolicyUrl: 'politica-privacidad.html',
         cookiePolicyUrl:  'politica-cookies.html',
-        primaryColor:     '#8A0C3C',
-        primaryDark:      '#6B092F',
-        accentColor:      '#FFD700',
+        primaryColor:     '#47D76D',
+        primaryDark:      '#5AAD30',
+        accentColor:      '#DDB140',
         position:         'bottom',
         consentVersion:   '1.0',
         storageKey:       'belsue_correseguro_consent',
@@ -87,7 +87,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="#coberturas">Coberturas</a></li>
                     <li><a href="#formulario">Contratar</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="contorg.html">Contacto Organizadores</a></li>
+                    <li><a href="contorg.html">Organizadores-Pruebas Deportivas</a></li>
                 </ul>
             </div>
         </nav>
@@ -101,10 +101,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="feature">
                     <i class="fas fa-hospital"></i>
-                    <span>Asistencia Sanitaria 24H</span>
+                    <span>Asistencia Sanitaria </span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>Reembolso de Gastos</span>
                 </div>
             </div>
-             <p>¿Eres organizador de pruebas deportivas? <a href="contorg.html" class="btn-ayuda">¡Podemos ayudarte!</a></p>
             <a href="#formulario" class="btn-primary">
                 <i class="fas fa-file-signature"></i> Contratar Ahora
             </a>
@@ -114,22 +117,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- COBERTURAS -->
     <section id="coberturas" class="coberturas">
         <div class="container">
-            <h2 class="section-title">¿Qué incluye tu seguro?</h2>
+            <h2 class="section-title">¿Qué incluye tu seguro?*</h2>
+            <!-- Riesgo Cubierto - Línea divisora -->
+            <div class="riesgo-cubierto">
+                <span class="riesgo-linea"></span>
+                <h3 class="riesgo-titulo">Riesgo Cubierto</h3>
+                <span class="riesgo-linea"></span>
+            </div>
+            <p class="riesgo-descripcion">Cobertura para accidentes ocurridos durante la práctica de running, trail, canicross, carreras de obstáculos y cualquier actividad cuyo objetivo principal sea correr.</p>
+            <!-- Badge de Precio -->
+            <div class="precio-badge">
+                <img src="images/precio.png" alt="Precio 59,90 €" width="1000" height="1000">
+            </div>
+            <!-- Tarjetas incluidas -->
             <div class="coberturas-grid">
                 <div class="cobertura-card">
                     <div class="icon-box"><i class="fas fa-ambulance"></i></div>
                     <h3>Urgencias</h3>
-                    <p>Hasta 9.000€ para accidentes durante la práctica de running: trail, canicross, carreras de obstáculos y cualquier actividad cuyo objetivo principal sea correr.</p>
-                </div>
-                <div class="cobertura-card">
-                    <div class="icon-box"><i class="fas fa-clock"></i></div>
-                    <h3>Cobertura Completa 24H</h3>
-                    <p>Asistencia sanitaria por accidente las 24 horas del día. Tanto en entrenamientos individuales como en carreras populares, estés donde estés.</p>
+                    <p>Traslado urgente desde el lugar del accidente hasta el centro sanitario concertado.</p>
                 </div>
                 <div class="cobertura-card">
                     <div class="icon-box"><i class="fas fa-file-medical"></i></div>
-                    <h3>Gastos Sanitarios</h3>
-                    <p>Consultas médicas, pruebas diagnósticas, hospitalización, traslado urgente desde el lugar del accidente y material de osteosíntesis hasta 1.200€.</p>
+                    <h3>Asistencia Sanitaria</h3>
+                    <p>Servicios médicos, pruebas diagnósticas, hospitalización en centros concertados.</p>
                 </div>
                 <div class="cobertura-card">
                     <div class="icon-box"><i class="fas fa-dumbbell"></i></div>
@@ -139,14 +149,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="cobertura-card">
                     <div class="icon-box"><i class="fas fa-wheelchair"></i></div>
                     <h3>Capital por Invalidez o Fallecimiento</h3>
-                    <p>Hasta 60.000€ en caso de fallecimiento o invalidez absoluta por accidente. </p>
+                    <p>Hasta 60.000€ en caso de fallecimiento o invalidez absoluta por accidente.</p>
                 </div>
                 <div class="cobertura-card">
                     <div class="icon-box"><i class="fas fa-ticket-alt"></i></div>
-                    <h3>Reembolso Inscripción</h3>
-                    <p>Serán reembolsables los gastos de inscripción a las carreras, gastos de desplazamiento o reservas hoteleras abonadas y no reembolsables*.</p>
+                    <h3>Reembolso Inscripción**</h3>
+                    <p>Serán reembolsables los gastos de inscripción a las carreras, gastos de desplazamiento o reservas hoteleras abonadas y no reembolsables.</p>
                 </div>
             </div>
+
+            <p class="coberturas-nota">* Límites y coberturas según lo establecido en las condiciones particulares generales y especiales de la póliza.</p>
+            <p class="coberturas-nota">** Tanto el reembolso de gastos de inscripción como de anulación de traslados y alojamientos serán 
+                por las siguientes causas: Hospitalización del asegurado por enfermedad o accidente del asegurado | Fallecimiento u Hospitalización de un familiar hasta segundo grado, conyuge o pareja de hecho | Pruebas de acceso o exámenes | Contingencias propias de cuerpos de seguridad, emergencias y asimilados.  
+            </p>
+
         </div>
     </section>
 
@@ -607,7 +623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <!-- Copyright y notas -->
         <div class="footer-info">
-            <p>&copy; 2026 CorreSeguro. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Belsué Seguros. Todos los derechos reservados.</p>
             <p class="footer-note">Seguro emitido a través de Surne Compañía de Seguros</p>
             <p class="footer-note">Una iniciativa de Belsué Seguros</p>
         </div>
@@ -671,6 +687,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/codigos-postales.js"></script>
     <script src="js/formulario.js"></script>
     <script src="js/chatbot.js"></script>
-    
+    <script src="js/components.js"></script>
+
 </body>
 </html>

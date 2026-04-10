@@ -40,7 +40,7 @@ Options -Indexes
 </Files>
 
 # Bloquear acceso a archivos de configuración
-<FilesMatch "(^\.env|\.env\.|config\.php|csrf\.php)$">
+<FilesMatch "(^\.env|\.env\.|config\.php)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
