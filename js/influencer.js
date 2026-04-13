@@ -12,7 +12,7 @@
 
   // 1. Leer el parámetro de la URL (tiene prioridad sobre sessionStorage)
   var params = new URLSearchParams(window.location.search);
-  var influencer = params.get('influencer');
+  var influencer = params.get('promo');
 
   if (influencer) {
     // Sanear el valor: solo letras, números, guiones y guiones bajos

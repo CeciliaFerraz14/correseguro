@@ -97,6 +97,7 @@ $datos = [
     'iban_sucursal'       => cleanStr($_POST['iban_sucursal'] ?? '', 4),
     'iban_dc_cuenta'      => cleanStr($_POST['iban_dc_cuenta'] ?? '', 2),
     'iban_cuenta'         => cleanStr($_POST['iban_cuenta'] ?? '', 10),
+    'influencer'          => cleanStr($_POST['influencer'] ?? '', 50),
 ];
 
 // ========================================
@@ -175,7 +176,8 @@ try {
     $mail->addReplyTo($datos['email'], $datos['nombre']);
 
     $mail->isHTML(true);
-    $mail->Subject = 'Nueva contratación - ' . htmlspecialchars($datos['nombre']) . ' ' . htmlspecialchars($datos['apellido1']) . ' (' . htmlspecialchars($datos['nif']) . ')';
+    $influencerTag = $datos['influencer'] ? ' [' . strtoupper(htmlspecialchars($datos['influencer'])) . ']' : '';
+    $mail->Subject = 'Nueva contratación - ' . htmlspecialchars($datos['nombre']) . ' ' . htmlspecialchars($datos['apellido1']) . ' (' . htmlspecialchars($datos['nif']) . ')' . $influencerTag;
     $mail->Body = '
     <!DOCTYPE html>
     <html>

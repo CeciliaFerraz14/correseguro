@@ -120,6 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const formData = new FormData(form);
 
+            // Adjuntar influencer si existe en sessionStorage
+            const influencer = sessionStorage.getItem('cs_influencer');
+            if (influencer) {
+                formData.append('influencer', influencer);
+            }
+
             // Obtener token CSRF antes de enviar
             try {
                 const csrfRes = await fetch('php/csrf.php');
