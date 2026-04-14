@@ -15,7 +15,7 @@ const NavbarComponent = `
 <nav class="navbar">
     <div class="container nav-container">
         <div class="logo">
-            <img src="images/zapa1.png" alt="CorreSeguro" style="height: 70px; width: auto; margin-left: -20px;">
+            <img src="images/logo1.png" alt="CorreSeguro" style="height: 70px; width: auto; margin-left: -20px;">
             <!-- Badge influencer: visible solo cuando ?influencer=nombre está activo -->
             <div id="influencer-badge"></div>
             <span>CorreSeguro</span>

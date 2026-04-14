@@ -30,6 +30,20 @@ Options -Indexes
 </IfModule>
 
 # =====================================================
+# VARIABLES DE ENTORNO
+# =====================================================
+SetEnv MAIL_HOST smtp.ionos.es
+SetEnv MAIL_PORT 587
+SetEnv MAIL_SECURE tls
+SetEnv MAIL_USERNAME ceciliaferrazfm@gmail.com
+SetEnv MAIL_FROM ceciliaferrazfm@gmail.com
+SetEnv MAIL_FROM_NAME CorreSeguro
+SetEnv MAIL_TO_INTERNAL soporteit@belsue.es
+# REEMPLAZA estos dos valores por los nuevos tras rotar credenciales:
+SetEnv MAIL_PASSWORD TU_PASSWORD_AQUI
+SetEnv GROQ_API_KEY TU_GROQ_API_KEY_AQUI
+
+# =====================================================
 # BLOQUEAR ACCESO A ARCHIVOS SENSIBLES
 # =====================================================
 

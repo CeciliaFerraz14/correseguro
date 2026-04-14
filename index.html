@@ -83,7 +83,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span>CorreSeguro</span>
                     <span style="font-size: 0.7em; opacity: 0.8;"><a href="https://www.belsue.es/" class="enlaceWeb" target="_blank" rel="noopener noreferrer">by Belsué</a></span>
                 </div>
-                <ul class="nav-menu">
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#coberturas">Coberturas</a></li>
                     <li><a href="#formulario">Contratar</a></li>
@@ -189,27 +192,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="progress-line"></div>
                     <div class="progress-step" data-step="2">
                         <div class="step-number">2</div>
-                        <div class="step-label">Contacto</div>
+                        <div class="step-label">Identidad</div>
                     </div>
                     <div class="progress-line"></div>
                     <div class="progress-step" data-step="3">
                         <div class="step-number">3</div>
-                        <div class="step-label">Dirección</div>
+                        <div class="step-label">Contacto</div>
                     </div>
                     <div class="progress-line"></div>
                     <div class="progress-step" data-step="4">
                         <div class="step-number">4</div>
-                        <div class="step-label">Beneficiarios</div>
+                        <div class="step-label">Dirección</div>
                     </div>
                     <div class="progress-line"></div>
                     <div class="progress-step" data-step="5">
                         <div class="step-number">5</div>
-                        <div class="step-label">Coberturas</div>
+                        <div class="step-label">Beneficiarios</div>
                     </div>
                     <div class="progress-line"></div>
                     <div class="progress-step" data-step="6">
                         <div class="step-number">6</div>
-                        <div class="step-label">Pago</div>
+                        <div class="step-label">Coberturas</div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="7">
+                        <div class="step-number">7</div>
+                        <div class="step-label">Datos bancarios</div>
                     </div>
                 </div>
             </div>
@@ -274,8 +282,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- PASO 2: DATOS DE CONTACTO -->
+                <!-- PASO 2: VERIFICACIÓN DE IDENTIDAD -->
                 <div class="form-step" data-step="2" style="display: none;">
+                    <div class="form-section">
+                        <h3><i class="fas fa-id-card"></i> Verificación de Identidad</h3>
+                        <p class="doc-intro">Para completar la contratación necesitamos una copia de tu documento de identidad (NIF, NIE o Pasaporte). Formatos admitidos: <strong>JPG, PNG o PDF</strong>. Máximo 5 MB por archivo.</p>
+
+                        <!-- Upload DNI anverso -->
+                        <div class="upload-area" id="upload-area-front">
+                            <input type="file" id="dni_front" name="dni_front" accept=".jpg,.jpeg,.png,.pdf" class="upload-input">
+                            <label for="dni_front" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span class="upload-title">Anverso del documento *</span>
+                                <span class="upload-hint">Arrastra el archivo aquí o haz clic para seleccionar</span>
+                                <span class="upload-filename" id="filename-front">Ningún archivo seleccionado</span>
+                            </label>
+                        </div>
+
+                        <!-- Upload DNI reverso -->
+                        <div class="upload-area" id="upload-area-back">
+                            <input type="file" id="dni_back" name="dni_back" accept=".jpg,.jpeg,.png,.pdf" class="upload-input">
+                            <label for="dni_back" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span class="upload-title">Reverso del documento</span>
+                                <span class="upload-hint">Arrastra el archivo aquí o haz clic para seleccionar</span>
+                                <span class="upload-filename" id="filename-back">Ningún archivo seleccionado (opcional para Pasaporte)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep(2)">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep(2)">
+                            Siguiente <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 3: DATOS DE CONTACTO -->
+                <div class="form-step" data-step="3" style="display: none;">
                     <div class="form-section">
                         <h3><i class="fas fa-envelope"></i> Datos de Contacto</h3>
                         <div class="form-row">
@@ -290,17 +336,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     <div class="form-navigation">
-                        <button type="button" class="btn-prev" onclick="prevStep(2)">
+                        <button type="button" class="btn-prev" onclick="prevStep(3)">
                             <i class="fas fa-arrow-left"></i> Anterior
                         </button>
-                        <button type="button" class="btn-next" onclick="nextStep(2)">
+                        <button type="button" class="btn-next" onclick="nextStep(3)">
                             Siguiente <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- PASO 3: DIRECCIÓN -->
-                <div class="form-step" data-step="3" style="display: none;">
+                <!-- PASO 4 (antes 3): DIRECCIÓN -->
+                <div class="form-step" data-step="4" style="display: none;">
                     <div class="form-section">
                         <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
                         <div class="form-row">
@@ -396,17 +442,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     <div class="form-navigation">
-                        <button type="button" class="btn-prev" onclick="prevStep(3)">
+                        <button type="button" class="btn-prev" onclick="prevStep(4)">
                             <i class="fas fa-arrow-left"></i> Anterior
                         </button>
-                        <button type="button" class="btn-next" onclick="nextStep(3)">
+                        <button type="button" class="btn-next" onclick="nextStep(4)">
                             Siguiente <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- PASO 4: BENEFICIARIOS (ANTES ERA 5) -->
-                <div class="form-step" data-step="4" style="display: none;">
+                <!-- PASO 5 (antes 4): BENEFICIARIOS -->
+                <div class="form-step" data-step="5" style="display: none;">
                     <div class="form-section">
                         <h3><i class="fas fa-users"></i> Beneficiarios</h3>
                         
@@ -450,17 +496,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     
                     <div class="form-navigation">
-                        <button type="button" class="btn-prev" onclick="prevStep(4)">
+                        <button type="button" class="btn-prev" onclick="prevStep(5)">
                             <i class="fas fa-arrow-left"></i> Anterior
                         </button>
-                        <button type="button" class="btn-next" onclick="nextStep(4)">
+                        <button type="button" class="btn-next" onclick="nextStep(5)">
                             Siguiente <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- PASO 5: COBERTURAS + PRECIO DESTACADO (ANTES ERA 4) -->
-                <div class="form-step" data-step="5" style="display: none;">
+                <!-- PASO 6 (antes 5): COBERTURAS -->
+                <div class="form-step" data-step="6" style="display: none;">
                     <div class="form-section">
                         <h3><i class="fas fa-shield-alt"></i> Coberturas Incluidas</h3>
                         
@@ -508,20 +554,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     
                     <div class="form-navigation">
-                        <button type="button" class="btn-prev" onclick="prevStep(5)">
+                        <button type="button" class="btn-prev" onclick="prevStep(6)">
                             <i class="fas fa-arrow-left"></i> Anterior
                         </button>
-                        <button type="button" class="btn-next" onclick="nextStep(5)">
+                        <button type="button" class="btn-next" onclick="nextStep(6)">
                             Siguiente <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- PASO 6: FORMA DE PAGO -->
-                <div class="form-step" data-step="6" style="display: none;">
+                <!-- PASO 7: DATOS BANCARIOS -->
+                <div class="form-step" data-step="7" style="display: none;">
                     <div class="form-section">
-                        <h3><i class="fas fa-credit-card"></i> Forma de Pago</h3>
-                        
+                        <h3><i class="fas fa-university"></i> Datos Bancarios</h3>
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="frecuencia_pago">Frecuencia de Pago *</label>
@@ -582,9 +628,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- CAPTCHA -->
+                    <div class="form-section captcha-section">
+                        <h3><i class="fas fa-robot"></i> Verificación anti-bots</h3>
+                        <div class="captcha-box">
+                            <span class="captcha-question" id="captcha-question"></span>
+                            <span class="captcha-equals">=</span>
+                            <input type="number" id="captcha-answer" placeholder="Tu respuesta" class="captcha-input" autocomplete="off">
+                            <button type="button" class="captcha-refresh" onclick="generarCaptcha()" title="Nueva pregunta">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                        <p class="captcha-hint">Resuelve la operación para demostrar que no eres un robot.</p>
+                    </div>
+
                     <div class="form-navigation">
-                        <button type="button" class="btn-prev" onclick="prevStep(6)">
+                        <button type="button" class="btn-prev" onclick="prevStep(7)">
                             <i class="fas fa-arrow-left"></i> Anterior
                         </button>
                         <button type="submit" class="btn-submit">
@@ -630,7 +690,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="images/carrera6.JPG" alt="Carrera runners">
                 <img src="images/carrera7.JPG" alt="Carrera runners">
                 <img src="images/carrera8.JPG" alt="Carrera runners">
-                <img src="images/image00009.jpeg" alt="Carrera runners">
                 <img src="images/image00032.jpeg" alt="Carrera runners">
                 <img src="images/image00033.jpeg" alt="Carrera runners">
                 <img src="images/image00034.jpeg" alt="Carrera runners">
@@ -723,6 +782,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/chatbot.js"></script>
     <script src="js/components.js"></script>
     <script src="js/influencer.js"></script>
+    <script>
+        // Menú hamburguesa móvil
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-menu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function () {
+                const isOpen = menu.classList.toggle('open');
+                btn.classList.toggle('open', isOpen);
+                btn.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Cerrar al hacer clic en un enlace
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    menu.classList.remove('open');
+                    btn.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+    </script>
+
     <script>
         (function () {
             const track = document.querySelector('.carrusel-track');

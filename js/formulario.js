@@ -3,7 +3,7 @@
 // ========================================
 
 let pasoActual = 1;
-const totalPasos = 6;
+const totalPasos = 7;
 
 // Navegación entre pasos
 function nextStep(paso) {
@@ -53,22 +53,38 @@ function actualizarProgreso(paso) {
 function validarPaso(paso) {
     const stepElement = document.querySelector(`.form-step[data-step="${paso}"]`);
     const inputsRequeridos = stepElement.querySelectorAll('[required]');
-    
+
     let valido = true;
-    
+
     inputsRequeridos.forEach(input => {
-        if (!input.value.trim()) {
+        if (input.type === 'checkbox') {
+            if (!input.checked) {
+                valido = false;
+                input.closest('.checkbox-group')?.classList.add('error');
+            }
+        } else if (!input.value.trim()) {
             valido = false;
             input.style.borderColor = '#DC3545';
         } else {
             input.style.borderColor = '#E5E7EB';
         }
     });
-    
+
+    // Paso 2: comprobar que se haya subido el anverso del DNI
+    if (paso === 2) {
+        const dniFront = document.getElementById('dni_front');
+        if (!dniFront || !dniFront.files || dniFront.files.length === 0) {
+            valido = false;
+            document.getElementById('upload-area-front')?.classList.add('upload-area--error');
+            alert('Debes adjuntar el anverso de tu documento de identidad antes de continuar.');
+            return false;
+        }
+    }
+
     if (!valido) {
         alert('Por favor, completa todos los campos obligatorios (*) antes de continuar.');
     }
-    
+
     return valido;
 }
 
@@ -98,15 +114,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        if (!validarPaso(6)) {
+
+        // Validar captcha
+        const respuesta = parseInt(document.getElementById('captcha-answer')?.value, 10);
+        if (isNaN(respuesta) || respuesta !== captchaResult) {
+            alert('La respuesta al captcha no es correcta. Inténtalo de nuevo.');
+            generarCaptcha();
+            document.getElementById('captcha-answer').value = '';
             return;
         }
-        
+
         const privacidad = document.getElementById('privacidad')?.checked;
         const terminos = document.getElementById('terminos')?.checked;
         const autorizacion = document.getElementById('autorizacion_datos')?.checked;
-        
+
         if (!privacidad || !terminos || !autorizacion) {
             alert('Debes aceptar la política de privacidad, términos y condiciones, y la autorización de datos.');
             return;
@@ -207,5 +228,89 @@ document.querySelectorAll('input[name="beneficiarios"]').forEach(function(radio)
         } else {
             box.style.display = 'none';
         }
+    });
+});
+
+// ========================================
+// CAPTCHA MATEMÁTICO
+// ========================================
+let captchaResult = 0;
+
+function generarCaptcha() {
+    const ops = ['+', '-', 'x'];
+    const op = ops[Math.floor(Math.random() * ops.length)];
+    let a, b, result;
+
+    if (op === '+') {
+        a = Math.floor(Math.random() * 10) + 1;
+        b = Math.floor(Math.random() * 10) + 1;
+        result = a + b;
+    } else if (op === '-') {
+        a = Math.floor(Math.random() * 10) + 5;
+        b = Math.floor(Math.random() * 5) + 1;
+        result = a - b;
+    } else {
+        a = Math.floor(Math.random() * 5) + 1;
+        b = Math.floor(Math.random() * 5) + 1;
+        result = a * b;
+    }
+
+    captchaResult = result;
+    const el = document.getElementById('captcha-question');
+    if (el) el.textContent = a + ' ' + op + ' ' + b;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    generarCaptcha();
+
+    // Mostrar nombre del archivo seleccionado y validar tamaño/tipo
+    ['front', 'back'].forEach(function (side) {
+        const input = document.getElementById('dni_' + side);
+        const label = document.getElementById('filename-' + side);
+        if (!input || !label) return;
+
+        input.addEventListener('change', function () {
+            const file = this.files[0];
+            if (!file) return;
+
+            const allowed = ['image/jpeg', 'image/png', 'application/pdf'];
+            const maxSize = 5 * 1024 * 1024; // 5 MB
+
+            if (!allowed.includes(file.type)) {
+                alert('Formato no permitido. Usa JPG, PNG o PDF.');
+                this.value = '';
+                label.textContent = 'Ningún archivo seleccionado';
+                return;
+            }
+            if (file.size > maxSize) {
+                alert('El archivo supera el límite de 5 MB.');
+                this.value = '';
+                label.textContent = 'Ningún archivo seleccionado';
+                return;
+            }
+
+            label.textContent = file.name;
+            const area = input.closest('.upload-area');
+            area.classList.add('upload-area--ok');
+            area.classList.remove('upload-area--error');
+        });
+
+        // Drag & drop
+        const area = input.closest('.upload-area');
+        area.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            area.classList.add('upload-area--drag');
+        });
+        area.addEventListener('dragleave', function () {
+            area.classList.remove('upload-area--drag');
+        });
+        area.addEventListener('drop', function (e) {
+            e.preventDefault();
+            area.classList.remove('upload-area--drag');
+            if (e.dataTransfer.files.length) {
+                input.files = e.dataTransfer.files;
+                input.dispatchEvent(new Event('change'));
+            }
+        });
     });
 });

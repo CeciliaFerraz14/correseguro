@@ -55,7 +55,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hero-overlay {
@@ -113,12 +113,46 @@ body {
     color: var(--accent-gold);
 }
 
+/* Botón hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 20;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animación a X cuando está abierto */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 .hero-content {
     position: relative;
     z-index: 5;
     text-align: center;
     padding: 80px 20px;
     color: var(--white);
+    flex: 1;
 
     background: linear-gradient(rgba(0, 78, 48, 0.55), rgba(0, 78, 48, 0.70)),
                 url('../images/carrera4.JPG') center/cover no-repeat;
@@ -285,22 +319,6 @@ section {
     color: var(--white);
 }
 
-/* Colores individuales por tarjeta */
-.coberturas-grid .cobertura-card:nth-child(1) .icon-box {
-    background: linear-gradient(135deg, #00C878, #007A52);
-}
-.coberturas-grid .cobertura-card:nth-child(2) .icon-box {
-    background: linear-gradient(135deg, #38D96A, #1A8040);
-}
-.coberturas-grid .cobertura-card:nth-child(3) .icon-box {
-    background: linear-gradient(135deg, #4CAF7A, #1B6B3A);
-}
-.coberturas-grid .cobertura-card:nth-child(4) .icon-box {
-    background: linear-gradient(135deg, #00E676, #00894A);
-}
-.coberturas-grid .cobertura-card:nth-child(5) .icon-box {
-    background: linear-gradient(135deg, #8BC34A, #4A7A1A);
-}
 
 .cobertura-card h3 {
     font-size: 1.3rem;
@@ -873,8 +891,41 @@ section {
         font-size: 2.5rem;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-menu {
         display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(6, 78, 48, 0.97);
+        backdrop-filter: blur(10px);
+        padding: 10px 0 20px;
+        z-index: 15;
+        list-style: none;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 14px 24px;
+        font-size: 1rem;
     }
 
     .hero-features {
@@ -1807,4 +1858,153 @@ select.autocompletado {
     #influencer-badge img {
         height: 44px;
     }
+}
+
+/* ========================================
+   PASO 7 — UPLOAD DNI + CAPTCHA
+   ======================================== */
+.doc-intro {
+    color: var(--text-light);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.upload-area {
+    position: relative;
+    border: 2px dashed #CBD5E1;
+    border-radius: 14px;
+    padding: 32px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: border-color 0.25s, background 0.25s;
+    cursor: pointer;
+}
+
+.upload-area:hover,
+.upload-area--drag {
+    border-color: var(--primary-color);
+    background: rgba(0, 200, 120, 0.04);
+}
+
+.upload-area--ok {
+    border-color: var(--primary-color);
+    background: rgba(0, 200, 120, 0.07);
+}
+
+.upload-area--error {
+    border-color: #DC3545;
+    background: rgba(220, 53, 69, 0.04);
+}
+
+.upload-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.upload-label .fas {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.upload-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.upload-hint {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.upload-filename {
+    font-size: 0.82rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Captcha */
+.captcha-section {
+    margin-top: 0;
+}
+
+.captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 16px 0 8px;
+}
+
+.captcha-question {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    background: rgba(0, 200, 120, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+
+.captcha-equals {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.captcha-input {
+    width: 100px;
+    padding: 10px 14px;
+    font-size: 1.2rem;
+    border: 2px solid #CBD5E1;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    transition: border-color 0.2s;
+}
+
+.captcha-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.captcha-refresh {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.captcha-refresh:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.captcha-hint {
+    font-size: 0.82rem;
+    color: var(--text-light);
+}
+
+@media (max-width: 480px) {
+    .captcha-question { font-size: 1.3rem; padding: 8px 14px; }
+    .captcha-input { width: 80px; font-size: 1rem; }
+}
 }
