@@ -290,16 +290,16 @@ section {
     background: linear-gradient(135deg, #00C878, #007A52);
 }
 .coberturas-grid .cobertura-card:nth-child(2) .icon-box {
-    background: linear-gradient(135deg, #00B4A0, #006B60);
+    background: linear-gradient(135deg, #38D96A, #1A8040);
 }
 .coberturas-grid .cobertura-card:nth-child(3) .icon-box {
     background: linear-gradient(135deg, #4CAF7A, #1B6B3A);
 }
 .coberturas-grid .cobertura-card:nth-child(4) .icon-box {
-    background: linear-gradient(135deg, #00A8C8, #005F7A);
+    background: linear-gradient(135deg, #00E676, #00894A);
 }
 .coberturas-grid .cobertura-card:nth-child(5) .icon-box {
-    background: linear-gradient(135deg, #FFC838, #CC8800);
+    background: linear-gradient(135deg, #8BC34A, #4A7A1A);
 }
 
 .cobertura-card h3 {
@@ -1448,7 +1448,7 @@ section {
 .precio-destacado {
     font-size: 5rem !important;           /* ← ENORME */
     font-weight: 900 !important;          /* ← EXTRA BOLD */
-    color: var(--accent-gold) !important; /* ← DORADO BRILLANTE */
+    color: var(--white) !important; /* ← BLANCO */
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
     z-index: 2 !important;
     letter-spacing: 3px !important;
