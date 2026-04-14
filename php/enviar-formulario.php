@@ -168,6 +168,35 @@ function crearMailer(): PHPMailer {
 $email_interno_ok = false;
 
 // ========================================
+// PROCESAR ARCHIVOS DNI ADJUNTOS
+// ========================================
+$archivos_dni = [];
+$tipos_permitidos = ['image/jpeg', 'image/png', 'application/pdf'];
+$max_size = 5 * 1024 * 1024; // 5 MB
+
+foreach (['dni_front' => 'DNI_anverso', 'dni_back' => 'DNI_reverso'] as $campo => $etiqueta) {
+    if (!isset($_FILES[$campo]) || $_FILES[$campo]['error'] === UPLOAD_ERR_NO_FILE) {
+        continue;
+    }
+    if ($_FILES[$campo]['error'] !== UPLOAD_ERR_OK) {
+        continue;
+    }
+    if ($_FILES[$campo]['size'] > $max_size) {
+        continue;
+    }
+    $tipo_real = mime_content_type($_FILES[$campo]['tmp_name']);
+    if (!in_array($tipo_real, $tipos_permitidos, true)) {
+        continue;
+    }
+    $ext = pathinfo($_FILES[$campo]['name'], PATHINFO_EXTENSION);
+    $ext = preg_replace('/[^a-zA-Z0-9]/', '', $ext);
+    $archivos_dni[] = [
+        'tmp'      => $_FILES[$campo]['tmp_name'],
+        'nombre'   => $etiqueta . '_' . preg_replace('/[^A-Za-z0-9_\-]/', '', $datos['nif']) . '.' . $ext,
+    ];
+}
+
+// ========================================
 // EMAIL INTERNO - TODOS LOS DATOS
 // ========================================
 try {
@@ -249,6 +278,10 @@ try {
     </html>
     ';
     $mail->AltBody = 'Nueva contratación de ' . $datos['nombre'] . ' ' . $datos['apellido1'] . ' - NIF: ' . $datos['nif'];
+
+    foreach ($archivos_dni as $archivo) {
+        $mail->addAttachment($archivo['tmp'], $archivo['nombre']);
+    }
 
     $mail->send();
     $email_interno_ok = true;

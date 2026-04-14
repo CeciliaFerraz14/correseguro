@@ -782,29 +782,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/chatbot.js"></script>
     <script src="js/components.js"></script>
     <script src="js/influencer.js"></script>
-    <script>
-        // Menú hamburguesa móvil
-        (function () {
-            const btn = document.getElementById('hamburger');
-            const menu = document.getElementById('nav-menu');
-            if (!btn || !menu) return;
-
-            btn.addEventListener('click', function () {
-                const isOpen = menu.classList.toggle('open');
-                btn.classList.toggle('open', isOpen);
-                btn.setAttribute('aria-expanded', isOpen);
-            });
-
-            // Cerrar al hacer clic en un enlace
-            menu.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    menu.classList.remove('open');
-                    btn.classList.remove('open');
-                    btn.setAttribute('aria-expanded', 'false');
-                });
-            });
-        })();
-    </script>
 
     <script>
         (function () {

@@ -21,7 +21,10 @@ const NavbarComponent = `
             <span>CorreSeguro</span>
             <span style="font-size: 0.7em; opacity: 0.8;"><a href="https://www.belsue.es/" class="enlaceWeb" target="_blank" rel="noopener noreferrer">by Belsué</a></span>
         </div>
-        <ul class="nav-menu">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html#inicio">Inicio</a></li>
             <li><a href="index.html#coberturas">Coberturas</a></li>
             <li><a href="index.html#formulario">Contratar</a></li>
@@ -98,12 +101,36 @@ function insertFooter() {
 }
 
 /**
+ * Enlaza los eventos del menú hamburguesa
+ */
+function initHamburger() {
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('nav-menu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', isOpen);
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('open');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+/**
  * Inicializa todos los componentes
  * Se ejecuta cuando el DOM está listo
  */
 function initComponents() {
     insertNavbar();
     insertFooter();
+    initHamburger();
 }
 
 // ========================================
