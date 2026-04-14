@@ -295,6 +295,7 @@ try {
 // ========================================
 try {
     $mail2 = crearMailer();
+    $mail2->setFrom('info@correseguro.es', 'CorreSeguro');
     $mail2->addAddress($datos['email'], $datos['nombre']);
     $mail2->addReplyTo(env('MAIL_TO_INTERNAL', 'soporteit@belsue.es'), 'CorreSeguro Soporte');
 
