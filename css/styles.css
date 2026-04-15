@@ -705,6 +705,12 @@ section {
     display: flex;
     align-items: center;
     gap: 15px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.contacto-item:hover {
+    opacity: 0.85;
 }
 
 .contacto-item i {

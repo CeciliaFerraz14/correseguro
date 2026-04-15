@@ -19,6 +19,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PRK2DCFK');</script>
 <!-- End Google Tag Manager -->
+
+    <!-- Tracking enlace promo (ej: ?promo=raos) -->
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var promo  = params.get('promo');
+
+        if (promo) {
+          sessionStorage.setItem('cs_promo', promo);
+        } else {
+          promo = sessionStorage.getItem('cs_promo');
+        }
+
+        if (promo) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event:        'promo_visit',
+            promo_source: promo
+          });
+        }
+      })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/zapa1.png">
@@ -663,15 +686,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <h2 class="section-title"><i class="fas fa-phone"></i> ¿Tienes Dudas?</h2>
             <div class="contacto-info">
-                <div class="contacto-item">
+                <a class="contacto-item" href="tel:+34976221423">
                     <i class="fas fa-phone"></i>
-                    <div><h4>Teléfono</h4><p>900 123 456</p></div>
-                </div>
-                <div class="contacto-item">
+                    <div><h4>Teléfono</h4><p>976 221 423</p></div>
+                </a>
+                <a class="contacto-item" href="mailto:info@correseguro.es">
                     <i class="fas fa-envelope"></i>
                     <div><h4>Email</h4><p>info@correseguro.es</p></div>
-                </div>
-                <div class="contacto-item">
+                </a>
+                <div class="contacto-item" onclick="toggleChat()" style="cursor:pointer;">
                     <i class="fas fa-comments"></i>
                     <div><h4>Chat IA</h4><p>Disponible 24/7</p></div>
                 </div>
