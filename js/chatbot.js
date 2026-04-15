@@ -92,6 +92,19 @@ function escapeHtml(str) {
         .replace(/'/g, '&#039;');
 }
 
+// Convertir emails, teléfonos y URLs en enlaces clicables
+function linkifyText(text) {
+    // Emails
+    text = text.replace(/([a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})/g,
+        '<a href="mailto:$1">$1</a>');
+    // Teléfonos españoles (ej: 976 221 423 o 92 640 64 41)
+    text = text.replace(/\b(\d{3}[\s]\d{3}[\s]\d{3}|\d{2}[\s]\d{3}[\s]\d{2}[\s]\d{2}|\d{9})\b/g, function(match) {
+        const clean = match.replace(/\s/g, '');
+        return `<a href="tel:+34${clean}">${match}</a>`;
+    });
+    return text;
+}
+
 // Añadir mensaje al chat
 function addMessage(text, sender) {
     const messagesContainer = document.getElementById('chatbot-messages');
@@ -101,7 +114,11 @@ function addMessage(text, sender) {
 
     const time = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
     // Escapar el contenido y convertir saltos de línea en <br> de forma segura
-    const safeText = escapeHtml(text).replace(/\n/g, '<br>');
+    let safeText = escapeHtml(text).replace(/\n/g, '<br>');
+    // Solo para mensajes del bot: convertir emails y teléfonos en enlaces
+    if (sender === 'bot') {
+        safeText = linkifyText(safeText);
+    }
 
     messageDiv.innerHTML = `
         <div class="message-content">${safeText}</div>

@@ -56,9 +56,9 @@ const FooterComponent = `
 
         <!-- Datos de contacto rápidos -->
         <div class="footer-contacto">
-            <span><i class="fas fa-map-marker-alt"></i> Gran Vía 33, Zaragoza</span>
-            <span><i class="fas fa-phone"></i> 976 221 423</span>
-            <span><i class="fas fa-envelope"></i> info@correseguro.es</span>
+            <a href="https://maps.app.goo.gl/EkF1AN9heUcen4e46" target="_blank"><i class="fas fa-map-marker-alt"></i> Gran Vía 33, Zaragoza</a>
+            <a href="tel:+34976221423"><i class="fas fa-phone"></i> 976 221 423</a>
+            <a href="mailto:info@correseguro.es"><i class="fas fa-envelope"></i> info@correseguro.es</a>
         </div>
     </div>
 </footer>
