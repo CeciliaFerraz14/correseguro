@@ -155,7 +155,7 @@ body {
     flex: 1;
 
     background: linear-gradient(rgba(0, 78, 48, 0.55), rgba(0, 78, 48, 0.70)),
-                url('../images/carrera4.JPG') center/cover no-repeat;
+                url('../images/carrera4.jpg') center/cover no-repeat;
     border-radius: 20px;
     margin: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -1123,6 +1123,30 @@ section {
 }
 
 /* Mensajes del chat */
+.chatbot-disclaimer {
+    background: #fff8e1;
+    border-bottom: 1px solid #ffe082;
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    color: #6d5500;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    line-height: 1.4;
+}
+
+.chatbot-disclaimer i {
+    color: #f59e0b;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.chatbot-disclaimer a {
+    color: #6d5500;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 .chatbot-messages {
     flex: 1;
     padding: 20px;
@@ -2019,5 +2043,4 @@ select.autocompletado {
 @media (max-width: 480px) {
     .captcha-question { font-size: 1.3rem; padding: 8px 14px; }
     .captcha-input { width: 80px; font-size: 1rem; }
-}
 }
